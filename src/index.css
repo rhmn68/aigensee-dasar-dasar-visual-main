@@ -1,0 +1,768 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'CC Regeneration';
+  src: url('./assets/fonts/FONNTS.COM-CCREGENERATION.OTF') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CCRegeneration';
+  src: url('./assets/fonts/FONNTS.COM-CCREGENERATION.OTF') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Changa One';
+  src: url('./assets/fonts/CHANGAONE-REGULAR.TTF') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Changa One';
+  src: url('./assets/fonts/CHANGAONE-REGULAR.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Changa One';
+  src: url('./assets/fonts/CHANGAONE-REGULAR.TTF') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Changa One';
+  src: url('./assets/fonts/CHANGAONE-REGULAR.TTF') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: 'Changa One', system-ui, -apple-system, sans-serif;
+  --font-display: 'Changa One', system-ui, sans-serif;
+  --font-serif: 'Changa One', Georgia, serif;
+  --font-mono: 'Space Grotesk', monospace;
+  --font-changa: 'Changa One', sans-serif;
+
+  --radius-3xl: 18px;
+  --radius-2xl: 14px;
+  --radius-xl: 10px;
+  --radius-lg: 8px;
+  --radius-md: 6px;
+  --radius-sm: 4px;
+}
+
+body {
+  background-color: #FAF8F5; /* Warm Ivory Paper */
+  font-family: 'Changa One', var(--font-sans);
+  color: #0F172A; /* Deep Slate Ink */
+  user-select: none;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+/* Custom Vintage Ink Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 99px;
+  border: 1px solid #FAF8F5;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Brutalist Sketchbook Card Shadows & Borders */
+.brutalist-card {
+  background: #FFFFFF;
+  border: 2px solid #0F172A;
+  box-shadow: 4px 4px 0px #0F172A;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.brutalist-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #0F172A;
+}
+.brutalist-card:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px #0F172A;
+}
+
+.brutalist-card-flat {
+  background: #FFFFFF;
+  border: 2px solid #0F172A;
+  box-shadow: 4px 4px 0px #0F172A;
+}
+
+.brutalist-button {
+  background: #EA580C; /* Burnt Orange */
+  color: #FFFFFF;
+  border: 2px solid #0F172A;
+  box-shadow: 3px 3px 0px #0F172A;
+  transition: all 0.15s ease-in-out;
+}
+.brutalist-button:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px #0F172A;
+  background: #F97316;
+}
+.brutalist-button:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #0F172A;
+}
+.brutalist-button:disabled {
+  background: #E2E8F0;
+  color: #94A3B8;
+  border-color: #CBD5E1;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Warm Paper Grid Pattern */
+.bg-paper-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+}
+
+.bg-dot-grid {
+  background-size: 20px 20px;
+  background-image: radial-gradient(rgba(15, 23, 42, 0.1) 1.5px, transparent 1.5px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatMascot {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: floatMascot 4s ease-in-out infinite;
+}
+
+@keyframes floatSmooth {
+  0%, 100% {
+    transform: translateY(-8px);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+#splash-title-container,
+.animate-float-gentle {
+  animation: floatGentle 3s ease-in-out infinite !important;
+}
+
+
+
+.hover-float:hover {
+  animation: floatSmooth 2.8s ease-in-out infinite;
+}
+
+/* ========================================================================= */
+/* MOBILE LANDSCAPE & SHORT VIEWPORT COMPACT MODE (Height <= 540px)          */
+/* Memperkecil layout konten agar tidak terpotong di mode landscape mobile    */
+/* ========================================================================= */
+@media (max-height: 540px) and (orientation: landscape), (max-height: 500px) {
+  /* 1. Header & Header Spacers */
+  header[id$="-header"] {
+    padding-top: 4px !important;
+    padding-bottom: 2px !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+  div[id$="-header-spacer"] {
+    height: 24px !important;
+  }
+  /* Logo diperbesar signifikan di mobile */
+  img[id$="-logo-img"] {
+    height: 60px !important;
+  }
+  div[id$="-logo-container"] {
+    transform: translate(6px, 4px) !important;
+  }
+  header[id$="-header"] button {
+    padding: 3px 10px !important;
+    font-size: 10.5px !important;
+    border-radius: 7px !important;
+    transform: translateY(2px) !important;
+    box-shadow: 1.5px 1.5px 0px #00354c !important;
+    border-width: 1.5px !important;
+  }
+  header[id$="-header"] button svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  #warna-arti-header-actions {
+    transform: translateY(2px) !important;
+    gap: 6px !important;
+  }
+
+  /* 2. Footer & Copyright Diperkecil */
+  footer[id$="-footer"] {
+    height: 14px !important;
+  }
+  #app-copyright,
+  footer#app-copyright {
+    font-size: 7px !important;
+    bottom: 2px !important;
+    letter-spacing: 0.04em !important;
+  }
+
+  /* 3. Main Content Areas & Padding Layout */
+  main[id$="-main-content"],
+  main[id$="-center-area"] {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  /* 4. Sisi Kiri: Artwork Container & Wrapper */
+  #contoh-desain-arti-poster-card,
+  #warna-arti-visual-card,
+  #tipografi-arti-specimen-card,
+  div[id$="-arti-visual-card"],
+  div[id$="-img-wrapper"],
+  #warna-left-colorwheel > div {
+    height: min(60vh, 210px) !important;
+    min-height: 130px !important;
+    max-height: 220px !important;
+  }
+  
+  /* Reset Scale Gambar di Mobile Landscape agar tidak meluber */
+  img[id$="-left-img"] {
+    transform: scale(1) !important;
+  }
+
+  /* 5. Sisi Kanan: Right Content & Content Box Intro Pages */
+  div[id$="-right-content"] {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100% !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+  div[id$="-content-box"] {
+    height: 100% !important;
+    max-height: min(68vh, 260px) !important;
+    gap: 6px !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    justify-content: center !important;
+    transform: translateY(12px) !important;
+  }
+
+  /* 6. Judul Grafis 3D (Diperbesar di Mobile) / Teks */
+  div[id$="-title-wrapper"] {
+    margin-bottom: 2px !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  img[id$="-title-img"] {
+    max-height: 48px !important;
+    max-width: 250px !important;
+    height: auto !important;
+    width: auto !important;
+    object-contain: contain !important;
+  }
+
+  /* Khusus Judul Halaman Contoh Desain */
+  #contoh-desain-title-wrapper span {
+    font-size: 8px !important;
+    padding: 1px 7px !important;
+    margin-bottom: 2px !important;
+    border-width: 1px !important;
+  }
+  #contoh-desain-title-wrapper h1 {
+    font-size: 1.35rem !important;
+    line-height: 1.15 !important;
+    margin-bottom: 0px !important;
+  }
+
+  /* 7. Paragraf Deskripsi Konten */
+  div[id$="-desc-wrapper"] {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 2px !important;
+    max-width: 480px !important;
+    width: 100% !important;
+  }
+  p[id$="-description"] {
+    font-size: 9px !important;
+    line-height: 1.34 !important;
+    letter-spacing: -0.01em !important;
+    margin-bottom: 0px !important;
+  }
+
+  /* 8. Tombol & Pemutar Audio */
+  div[id$="-btn-wrapper"] {
+    gap: 6px !important;
+    flex-shrink: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-top: 2px !important;
+  }
+
+  /* Audio Player Compact - Redesigned sleek inline pill */
+  div[id$="-audio-player"] {
+    padding: 3px 10px !important;
+    gap: 7px !important;
+    border-radius: 9999px !important;
+    border-width: 2px !important;
+    border-color: #004760 !important;
+    background: #ffffff !important;
+    max-width: 340px !important;
+    width: 100% !important;
+    height: 38px !important;
+    box-shadow: 2px 2px 0px #00354c !important;
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+  }
+  button[id$="-audio-toggle-btn"] {
+    width: 28px !important;
+    height: 28px !important;
+    border-width: 1.5px !important;
+    border-color: #004760 !important;
+    box-shadow: 1px 1px 0px #00354c !important;
+    flex-shrink: 0 !important;
+  }
+  button[id$="-audio-toggle-btn"] svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+  div[id$="-audio-player"] span {
+    font-size: 8.5px !important;
+    font-weight: 700 !important;
+    color: #00354c !important;
+    flex-shrink: 0 !important;
+  }
+  div[id$="-audio-player"] input[type="range"] {
+    height: 5px !important;
+    border-radius: 9999px !important;
+    accent-color: #00a1db !important;
+    cursor: pointer !important;
+  }
+  div[id$="-audio-player"] input[type="range"]::-webkit-slider-thumb {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+    background: #00a1db !important;
+    border: 1.5px solid #004760 !important;
+    cursor: pointer !important;
+  }
+  div[id$="-audio-player"] input[type="range"]::-moz-range-thumb {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 50% !important;
+    background: #00a1db !important;
+    border: 1.5px solid #004760 !important;
+    cursor: pointer !important;
+  }
+  div[id$="-audio-player"] svg {
+    width: 13px !important;
+    height: 13px !important;
+    flex-shrink: 0 !important;
+  }
+  button[id$="-audio-restart-btn"] {
+    padding: 3px !important;
+    flex-shrink: 0 !important;
+  }
+  button[id$="-audio-restart-btn"] svg {
+    width: 12.5px !important;
+    height: 12.5px !important;
+  }
+
+  /* Tombol Cari Tahu Compact */
+  button[id$="-btn-cari-tahu"] {
+    padding: 3px 18px !important;
+    font-size: 10.5px !important;
+    border-radius: 8px !important;
+    border-width: 1.5px !important;
+    height: 28px !important;
+    box-shadow: 2px 2px 0px #00354c !important;
+    margin-top: 0px !important;
+  }
+  button[id$="-btn-cari-tahu"] svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  /* Badges 4 Pilar Contoh Desain Compact */
+  #contoh-desain-pillars {
+    gap: 4px !important;
+    padding: 0px !important;
+    margin-bottom: 2px !important;
+  }
+  #contoh-desain-pillars span {
+    font-size: 8.5px !important;
+    padding: 1px 6px !important;
+    border-radius: 6px !important;
+    border-width: 1px !important;
+    box-shadow: 1px 1px 0px #00354c !important;
+  }
+
+  /* ========================================================================= */
+  /* HALAMAN INTERAKTIF / ARTI COMPACT                                         */
+  /* ========================================================================= */
+  #warna-arti-content-box,
+  div[id$="-arti-content-box"] {
+    height: auto !important;
+    max-height: min(68vh, 250px) !important;
+    gap: 4px !important;
+    padding: 0 !important;
+    justify-content: center !important;
+  }
+  /* Interactive Visual Cards Compact Scaling */
+  #tipografi-arti-specimen-card,
+  #keseimbangan-arti-visual-card,
+  #ruang-kosong-arti-visual-card,
+  #warna-arti-visual-card {
+    height: min(60vh, 210px) !important;
+    max-height: 220px !important;
+    padding: 6px !important;
+  }
+
+  /* Tipografi Card: Gunakan mode Tag ringkas di landscape mobile */
+  #tipografi-arti-specimen-card div.flex.md\:hidden {
+    display: flex !important;
+  }
+  #tipografi-arti-specimen-card div.hidden.md\:flex {
+    display: none !important;
+  }
+  #tipografi-arti-specimen-card span.inline.md\:hidden {
+    display: inline !important;
+  }
+  #tipografi-arti-specimen-card span.hidden.md\:inline,
+  #tipografi-arti-specimen-card p.hidden.md\:block {
+    display: none !important;
+  }
+  #tipografi-arti-specimen-letter {
+    font-size: 3.2rem !important;
+    line-height: 1 !important;
+  }
+  #tipografi-arti-specimen-card h4 {
+    font-size: 11px !important;
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+  }
+
+  /* Keseimbangan Card: Optimasi proporsi timbangan di landscape mobile */
+  #keseimbangan-arti-card-header {
+    padding-bottom: 2px !important;
+  }
+  #keseimbangan-arti-card-title {
+    font-size: 9px !important;
+    white-space: nowrap !important;
+    letter-spacing: 0px !important;
+  }
+  #keseimbangan-arti-card-header span:last-child {
+    font-size: 8px !important;
+    padding: 1px 6px !important;
+  }
+  #keseimbangan-arti-seesaw-container {
+    max-width: 170px !important;
+  }
+  #keseimbangan-arti-seesaw-container .absolute.-top-10 {
+    top: -26px !important;
+    padding: 2px 4px !important;
+    border-radius: 8px !important;
+  }
+  #keseimbangan-arti-seesaw-container .absolute.-top-10 span {
+    font-size: 13px !important;
+  }
+  #keseimbangan-arti-seesaw-container .w-0.h-0 {
+    border-bottom-width: 20px !important;
+    border-left-width: 12px !important;
+    border-right-width: 12px !important;
+    margin-top: 1px !important;
+  }
+  #keseimbangan-arti-seesaw-container .w-24.h-2 {
+    width: 60px !important;
+    height: 6px !important;
+  }
+  #keseimbangan-arti-card-footer {
+    padding-top: 2px !important;
+    font-size: 8px !important;
+  }
+  #warna-arti-title-wrapper h2,
+  #tipografi-arti-title-wrapper h2,
+  #ruang-kosong-arti-title-wrapper h2,
+  #keseimbangan-arti-title-wrapper h2,
+  #contoh-desain-arti-title-wrapper h2 {
+    font-size: 1.15rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1px !important;
+  }
+  #contoh-desain-arti-badge {
+    font-size: 8px !important;
+    padding: 1px 6px !important;
+    margin-bottom: 2px !important;
+  }
+  p[id$="-arti-description"] {
+    font-size: 9px !important;
+    line-height: 1.34 !important;
+    margin-bottom: 2px !important;
+  }
+
+  /* Button Berjajar (Footer Buttons) Diperbesar & Digeser ke Atas di Mobile */
+  footer[id$="-footer-buttons"],
+  #warna-arti-footer-buttons {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    transform: translateY(-20px) !important;
+  }
+  #warna-12-buttons {
+    gap: 8px !important;
+  }
+  #warna-12-buttons button {
+    width: 42px !important;
+    height: 42px !important;
+    padding: 0 !important;
+    border-radius: 11px !important;
+    border-width: 2.5px !important;
+    box-shadow: 2.5px 2.5px 0px #00354c !important;
+  }
+  #warna-12-buttons button span {
+    display: none !important;
+  }
+  #tipografi-arti-footer-buttons button,
+  #keseimbangan-arti-footer-buttons button,
+  #ruang-kosong-arti-footer-buttons button,
+  #contoh-desain-arti-footer-buttons button {
+    padding: 6px 18px !important;
+    font-size: 12.5px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    border-radius: 12px !important;
+    border-width: 2.5px !important;
+    box-shadow: 2.5px 2.5px 0px #00354c !important;
+  }
+
+  /* ========================================================================= */
+  /* SPLASH PAGE COMPACT (Judul & Button Diperbesar)                           */
+  /* ========================================================================= */
+  #splash-header-spacer {
+    height: 12px !important;
+  }
+  #splash-center-area {
+    margin-top: 2px !important;
+  }
+  /* Judul Splash Diperbesar di Mobile */
+  #splash-title-atas {
+    max-height: 25vh !important;
+    max-width: 440px !important;
+  }
+  #splash-title-bawah {
+    max-height: 19vh !important;
+    max-width: 230px !important;
+  }
+  #splash-footer-panel {
+    height: 25vh !important;
+    padding-bottom: 4px !important;
+    transform: translateY(-20px) !important;
+  }
+  /* Button Berjajar Splash Diperbesar di Mobile */
+  #splash-5-buttons {
+    gap: 15px !important;
+  }
+  #splash-5-buttons button {
+    width: 68px !important;
+    height: 68px !important;
+    border-radius: 16px !important;
+    border-width: 3px !important;
+    box-shadow: 3.5px 3.5px 0px #00354c !important;
+  }
+  #splash-5-buttons button img,
+  #splash-5-buttons button svg {
+    width: 38px !important;
+    height: 38px !important;
+  }
+}
+
+/* Very short screens (Height <= 380px, e.g. 360px Android & 375px iPhone) */
+@media (max-height: 380px) and (orientation: landscape), (max-height: 380px) {
+  header[id$="-header"] {
+    padding-top: 2px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  div[id$="-header-spacer"] {
+    height: 18px !important;
+  }
+  img[id$="-logo-img"] {
+    height: 50px !important;
+  }
+  div[id$="-logo-container"] {
+    transform: translate(4px, 2px) !important;
+  }
+  #app-copyright,
+  footer#app-copyright {
+    font-size: 6.5px !important;
+    bottom: 1px !important;
+  }
+  main[id$="-main-content"],
+  main[id$="-center-area"] {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+  div[id$="-img-wrapper"],
+  #warna-left-colorwheel > div,
+  #contoh-desain-arti-poster-card,
+  #warna-arti-visual-card,
+  #tipografi-arti-specimen-card,
+  div[id$="-arti-visual-card"] {
+    height: min(58vh, 185px) !important;
+    max-height: 190px !important;
+  }
+  div[id$="-content-box"] {
+    max-height: min(70vh, 235px) !important;
+    gap: 4px !important;
+    transform: translateY(8px) !important;
+  }
+  #warna-arti-content-box,
+  div[id$="-arti-content-box"] {
+    transform: none !important;
+  }
+  img[id$="-title-img"] {
+    max-height: 40px !important;
+    max-width: 210px !important;
+  }
+  p[id$="-description"],
+  p[id$="-arti-description"] {
+    font-size: 8.2px !important;
+    line-height: 1.3 !important;
+  }
+  button[id$="-btn-cari-tahu"] {
+    height: 26px !important;
+    font-size: 9px !important;
+    padding: 2px 12px !important;
+  }
+  div[id$="-audio-player"] {
+    height: 34px !important;
+    padding: 2px 9px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    gap: 6px !important;
+  }
+  button[id$="-audio-toggle-btn"] {
+    width: 25px !important;
+    height: 25px !important;
+  }
+  button[id$="-audio-toggle-btn"] svg {
+    width: 11.5px !important;
+    height: 11.5px !important;
+  }
+  div[id$="-audio-player"] input[type="range"]::-webkit-slider-thumb {
+    width: 11px !important;
+    height: 11px !important;
+  }
+  div[id$="-audio-player"] input[type="range"]::-moz-range-thumb {
+    width: 11px !important;
+    height: 11px !important;
+  }
+  button[id$="-audio-restart-btn"] svg {
+    width: 11.5px !important;
+    height: 11.5px !important;
+  }
+  /* Splash 380px */
+  #splash-title-atas {
+    max-height: 23vh !important;
+    max-width: 390px !important;
+  }
+  #splash-title-bawah {
+    max-height: 17vh !important;
+    max-width: 200px !important;
+  }
+  #splash-footer-panel {
+    height: 23vh !important;
+    padding-bottom: 2px !important;
+    transform: translateY(-16px) !important;
+  }
+  #splash-5-buttons {
+    gap: 11px !important;
+  }
+  #splash-5-buttons button {
+    width: 58px !important;
+    height: 58px !important;
+    border-radius: 14px !important;
+    border-width: 2.5px !important;
+  }
+  #splash-5-buttons button img,
+  #splash-5-buttons button svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  /* Arti Buttons 380px */
+  footer[id$="-footer-buttons"],
+  #warna-arti-footer-buttons {
+    transform: translateY(-16px) !important;
+    padding-bottom: 0px !important;
+  }
+  #warna-12-buttons {
+    gap: 6.5px !important;
+  }
+  #warna-12-buttons button {
+    width: 35px !important;
+    height: 35px !important;
+    border-radius: 8px !important;
+  }
+  #tipografi-arti-footer-buttons button,
+  #keseimbangan-arti-footer-buttons button,
+  #ruang-kosong-arti-footer-buttons button,
+  #contoh-desain-arti-footer-buttons button {
+    padding: 4px 14px !important;
+    font-size: 11px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    border-radius: 10px !important;
+  }
+}
+

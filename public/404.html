@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <title>Dasar-Dasar Visual</title>
+    <script>
+      // Single Page Apps for GitHub Pages
+      // Redirect direct path URL back to hash-based route under /aigensee-dasar-dasar-visual-main/
+      (function() {
+        var l = window.location;
+        var pathname = l.pathname;
+        var segments = pathname.replace(/^\/+|\/+$/g, '').split('/');
+        
+        var repoIndex = segments.indexOf('aigensee-dasar-dasar-visual-main');
+        var routeSegments = repoIndex >= 0 ? segments.slice(repoIndex + 1) : segments;
+        var route = routeSegments.join('/');
+        
+        var basePath = repoIndex >= 0 ? '/' + segments.slice(0, repoIndex + 1).join('/') + '/' : '/aigensee-dasar-dasar-visual-main/';
+        var targetUrl = l.protocol + '//' + l.host + basePath + (route ? '#/' + route : '') + (l.search || '');
+        l.replace(targetUrl);
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Memuat Dasar-Dasar Visual...</p>
+  </body>
+</html>
