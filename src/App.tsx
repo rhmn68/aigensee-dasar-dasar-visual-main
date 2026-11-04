@@ -245,7 +245,7 @@ export default function App() {
             currentView === 'splash' ? 'text-white' : 'text-slate-600'
           }`}
         >
-          Copyright 2026 Pusat Perbukuan
+          © Copyright 2026 Pusat Perbukuan
         </footer>
       )}
     </div>
