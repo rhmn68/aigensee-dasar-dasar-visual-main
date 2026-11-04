@@ -1,9 +1,23 @@
+import { InteractionGuide } from '../../components/ColorGuide';
 import { InlineIcon } from '../../components/InlineIcon';
 import React, { useState } from 'react';
 import { playClick } from '../../utils/audio';
 import { ArrowLeft, Home, Scale, Sparkles } from 'lucide-react';
 import logoJenama from '../../assets/logo-jenama-primer.png';
 import { BackgroundFrame } from '../../components/BackgroundFrame';
+
+const balanceGuideSteps = [
+  {
+    target: 'keseimbangan-arti-balance-card',
+    title: 'Amati bobot visual di kedua sisi',
+    description: 'Perhatikan elemen di kiri dan kanan timbangan. Pada keseimbangan simetris, bentuk, ukuran, dan susunannya serupa seperti pantulan cermin sehingga kedua sisi terasa sama berat.',
+  },
+  {
+    target: 'keseimbangan-selector-buttons',
+    title: 'Jelajahi jenis keseimbangan',
+    description: 'Klik pilihan 2, 3, atau 4 di bawah untuk melihat keseimbangan Asimetris, Radial, dan Mosaik. Ilustrasi serta penjelasannya akan berubah. Bandingkan cara tiap jenis membagi bobot visual, lalu klik Simetris untuk kembali.',
+  },
+];
 
 interface KeseimbanganArtiPageProps {
   onBack: () => void;
@@ -90,6 +104,7 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
       className="h-screen w-screen relative overflow-hidden flex flex-col justify-between select-none bg-white text-slate-900"
     >
       {/* LAYER 0 & 1: REUSABLE RESPONSIVE BACKGROUND & FRAME */}
+      {activeBalance.id === 'simetris' && <InteractionGuide steps={balanceGuideSteps} label="Panduan Keseimbangan" />}
       <BackgroundFrame idPrefix="keseimbangan-arti" />
 
       {/* ========================================================================= */}

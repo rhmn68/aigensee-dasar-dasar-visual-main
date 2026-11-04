@@ -1,9 +1,23 @@
+import { InteractionGuide } from '../../components/ColorGuide';
 import { InlineIcon } from '../../components/InlineIcon';
 import React, { useState } from 'react';
 import { playClick } from '../../utils/audio';
 import { ArrowLeft, Home, Maximize2, Minimize2, Sliders, Eye } from 'lucide-react';
 import logoJenama from '../../assets/logo-jenama-primer.png';
 import { BackgroundFrame } from '../../components/BackgroundFrame';
+
+const macroGuideSteps = [
+  {
+    target: 'ruang-kosong-arti-canvas-card',
+    title: 'Amati ruang di sekeliling kanvas',
+    description: 'Perhatikan jarak antara bingkai putus-putus dan kotak putih di dalamnya. Jarak ini adalah margin: ruang makro yang memberi elemen tempat untuk bernapas.',
+  },
+  {
+    target: 'ruang-makro-simulation-controls',
+    title: 'Bandingkan Sesak, Sedang, dan Lega',
+    description: 'Klik Sesak, Sedang, atau Lega untuk mengubah margin pada kanvas. Amati bagaimana ruang di tepi menyempit atau melebar, lalu bandingkan tampilan yang terasa paling nyaman.',
+  },
+];
 
 interface RuangKosongArtiPageProps {
   onBack: () => void;
@@ -102,6 +116,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
       className="h-screen w-screen relative overflow-hidden flex flex-col justify-between select-none bg-white text-slate-900"
     >
       {/* LAYER 0 & 1: REUSABLE RESPONSIVE BACKGROUND & FRAME */}
+      {activePrinciple.id === 'makro' && <InteractionGuide steps={macroGuideSteps} label="Panduan Ruang Makro" />}
       <BackgroundFrame idPrefix="ruang-kosong-arti" />
 
       {/* ========================================================================= */}
@@ -335,7 +350,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
               </div>
 
               {/* Bottom Interactive Controls: Tingkat Ruang Napas (Sesak / Sedang / Lega) */}
-              <div className="w-full border-t border-slate-200 pt-1 shrink-0 flex items-center justify-between px-0.5 text-[8px] min-[360px]:text-[9px] sm:text-xs text-slate-600 font-bold">
+              <div id="ruang-makro-simulation-controls" className="w-full border-t border-slate-200 pt-1 shrink-0 flex items-center justify-between px-0.5 text-[8px] min-[360px]:text-[9px] sm:text-xs text-slate-600 font-bold">
                 <span className="text-[#004760] font-black">Simulasi Ruang:</span>
                 <div className="flex items-center gap-1">
                   <button

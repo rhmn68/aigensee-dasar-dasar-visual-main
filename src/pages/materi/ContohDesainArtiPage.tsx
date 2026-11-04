@@ -1,3 +1,4 @@
+import { InteractionGuide } from '../../components/ColorGuide';
 import React, { useState } from 'react';
 import { playClick } from '../../utils/audio';
 import { ArrowLeft, Home } from 'lucide-react';
@@ -10,6 +11,24 @@ import poster3 from '../../assets/poster 3.jpg';
 import poster4 from '../../assets/poster 4.jpg';
 import poster5 from '../../assets/poster 5.jpg';
 import poster6 from '../../assets/poster 6.jpg';
+
+const posterGuideSteps = [
+  {
+    target: 'contoh-desain-arti-poster-card',
+    title: 'Amati contoh desainnya',
+    description: 'Perhatikan warna, bentuk huruf, ruang kosong, dan susunan objek pada poster. Arahkan kursor ke poster setelah panduan selesai untuk melihatnya sedikit membesar.',
+  },
+  {
+    target: 'contoh-desain-arti-desc-wrapper',
+    title: 'Hubungkan dengan prinsip desain',
+    description: 'Baca penjelasan dan kata kunci di sini untuk memahami bagaimana warna, tipografi, ruang kosong, serta keseimbangan diterapkan. Cocokkan penjelasannya dengan bagian yang kamu lihat pada poster.',
+  },
+  {
+    target: 'contoh-desain-selector-buttons',
+    title: 'Bandingkan keenam poster',
+    description: 'Klik pilihan 2 sampai 6 untuk mengganti poster dan penjelasannya. Amati perbedaan penerapan prinsip desain pada setiap contoh. Klik Poster 1 untuk kembali ke contoh awal.',
+  },
+];
 
 interface ContohDesainArtiPageProps {
   onBack: () => void;
@@ -113,6 +132,7 @@ export function ContohDesainArtiPage({ onBack, onHome }: ContohDesainArtiPagePro
       className="h-screen w-screen relative overflow-hidden flex flex-col justify-between select-none bg-white text-slate-900"
     >
       {/* LAYER 0 & 1: REUSABLE RESPONSIVE BACKGROUND & FRAME */}
+      {selectedIndex === 0 && <InteractionGuide steps={posterGuideSteps} label="Panduan Contoh Desain" />}
       <BackgroundFrame idPrefix="contoh-desain-arti" />
 
       {/* ========================================================================= */}

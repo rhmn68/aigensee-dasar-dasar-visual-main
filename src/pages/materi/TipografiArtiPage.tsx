@@ -1,8 +1,34 @@
+import { InteractionGuide } from '../../components/ColorGuide';
 import React, { useState } from 'react';
 import { playClick } from '../../utils/audio';
 import { ArrowLeft, Home, Sliders } from 'lucide-react';
 import logoJenama from '../../assets/logo-jenama-primer.png';
 import { BackgroundFrame } from '../../components/BackgroundFrame';
+
+const serifGuideSteps = [
+  {
+    target: 'tipografi-arti-specimen-card',
+    title: 'Kenali huruf Serif',
+    description: 'Amati contoh huruf Aa pada kartu. Serif memiliki kait kecil di ujung guratan huruf. Gunakan kontrol di bagian bawah kartu untuk mencoba tampilannya.',
+  },
+  {
+    target: 'tipografi-text-input',
+    fallbackTarget: 'tipografi-arti-specimen-card',
+    title: 'Coba teks buatanmu',
+    description: 'Klik kolom “Ketik teks uji coba...” lalu tulis hingga 18 karakter. Contoh huruf pada kartu akan berubah mengikuti teks yang kamu ketik. Kolom ini tersedia pada layar tablet dan desktop.',
+  },
+  {
+    target: 'tipografi-kerning-slider',
+    fallbackTarget: 'tipografi-arti-specimen-card',
+    title: 'Atur jarak antarhuruf',
+    description: 'Geser pengaturan Kerning ke kiri atau kanan untuk merapatkan atau merenggangkan jarak antarhuruf. Amati perubahan pada contoh teks. Pengaturan ini tersedia pada layar tablet dan desktop.',
+  },
+  {
+    target: 'tipografi-hierarchy-controls',
+    title: 'Coba ukuran dan hierarki',
+    description: 'Klik H1, H2, H3, H4, atau P untuk mengubah ukuran contoh teks. Bandingkan tampilan judul besar dengan teks paragraf sebelum mulai bereksperimen.',
+  },
+];
 
 interface TipografiArtiPageProps {
   onBack: () => void;
@@ -138,6 +164,8 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
       id="tipografi-arti-page"
       className="h-screen w-screen relative overflow-hidden flex flex-col justify-between select-none bg-white text-slate-900"
     >
+      {activeFont.id === 'serif' && <InteractionGuide steps={serifGuideSteps} label="Panduan Serif" />}
+
       {/* LAYER 0 & 1: REUSABLE RESPONSIVE BACKGROUND & FRAME */}
       <BackgroundFrame idPrefix="tipografi-arti" />
 
@@ -270,7 +298,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
               </div>
 
               {/* Bottom Bar: Typographic Tags Selector (H1, H2, H3, H4, P) */}
-              <div className="w-full border-t border-slate-200 pt-1 shrink-0">
+              <div id="tipografi-hierarchy-controls" className="w-full border-t border-slate-200 pt-1 shrink-0">
                 {/* Mobile view: Tag Hierarchy Buttons */}
                 <div className="flex md:hidden items-center justify-between px-0.5 text-[8px] min-[360px]:text-[9px] text-slate-600 font-bold">
                   <span className="text-[#004760] text-[8px]">Tag:</span>
@@ -297,6 +325,8 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                   {/* Type-to-Preview Input */}
                   <div className="w-full flex items-center gap-1.5">
                     <input
+                      id="tipografi-text-input"
+                      aria-label="Teks uji coba Serif"
                       type="text"
                       maxLength={18}
                       value={customText}
@@ -323,6 +353,8 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                       <span>Kerning: {letterSpacing}px</span>
                     </div>
                     <input
+                      id="tipografi-kerning-slider"
+                      aria-label="Jarak antarhuruf"
                       type="range"
                       min="-2"
                       max="10"

@@ -766,3 +766,45 @@ button, input, select, textarea {
   }
 }
 
+
+/* Guided tour: keep the current target visible through the dimmed backdrop. */
+.color-guide-dialog {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: hidden;
+}
+.color-guide-dialog::backdrop { background: transparent; }
+.color-guide-spotlight {
+  position: fixed;
+  border: 2px solid #bfdbfe;
+  border-radius: 20px;
+  box-shadow: 0 0 0 9999px rgb(15 23 42 / 55%);
+  pointer-events: none;
+}
+.color-guide-panel {
+  position: fixed;
+  width: min(420px, 44vw);
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  background: white;
+  box-shadow: 0 16px 48px rgb(15 23 42 / 20%);
+  font-family: Arial, sans-serif;
+}
+@media (max-height: 500px) {
+  .color-guide-panel { padding: 16px; width: min(430px, 48vw); }
+  .color-guide-panel p { margin-top: 8px; font-size: 12px; }
+  .color-guide-panel h2 { font-size: 17px; }
+  .color-guide-panel > div:last-child { margin-top: 12px; }
+}
+@media (max-width: 600px) and (min-height: 501px) {
+  .color-guide-panel { width: calc(100vw - 40px); padding: 20px; }
+}

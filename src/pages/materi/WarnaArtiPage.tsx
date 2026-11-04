@@ -1,3 +1,4 @@
+import { ColorGuide } from '../../components/ColorGuide';
 import React, { useState } from 'react';
 import { playClick } from '../../utils/audio';
 import {
@@ -225,6 +226,8 @@ export function WarnaArtiPage({ onBack, onHome }: WarnaArtiPageProps) {
       id="warna-arti-page"
       className="h-screen w-screen relative overflow-hidden flex flex-col justify-between select-none bg-white text-slate-900"
     >
+      <ColorGuide />
+
       {/* LAYER 0 & 1: REUSABLE RESPONSIVE BACKGROUND & FRAME (assets/background-judul.svg) */}
       <BackgroundFrame idPrefix="warna-arti" />
 
