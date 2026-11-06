@@ -4,6 +4,9 @@ import { Music2, VolumeX } from 'lucide-react';
 import bgmUrl from '../assets/audio/study-cheerful.mp3';
 import { isNarrationPlaying, subscribeToNarration } from '../utils/narration';
 
+const NORMAL_MUSIC_VOLUME = 0.55;
+const NARRATION_MUSIC_VOLUME = 0.025;
+
 export function BackgroundMusic({ view }: { view: string }) {
   const [controlSlot, setControlSlot] = useState<HTMLElement | null>(null);
   useLayoutEffect(() => {
@@ -20,8 +23,8 @@ export function BackgroundMusic({ view }: { view: string }) {
     const updateVolume = () => {
       cancelAnimationFrame(frame);
       const startVolume = audio.volume;
-      const target = isNarrationPlaying() ? 0.025 : 0.18;
-      const duration = isNarrationPlaying() ? 250 : 900;
+      const target = isNarrationPlaying() ? NARRATION_MUSIC_VOLUME : NORMAL_MUSIC_VOLUME;
+      const duration = isNarrationPlaying() ? 180 : 1000;
       const start = performance.now();
       const fade = (now: number) => {
         const progress = Math.min(1, (now - start) / duration);
@@ -30,7 +33,7 @@ export function BackgroundMusic({ view }: { view: string }) {
       };
       frame = requestAnimationFrame(fade);
     };
-    audio.volume = isNarrationPlaying() ? 0.025 : 0.18;
+    audio.volume = isNarrationPlaying() ? NARRATION_MUSIC_VOLUME : NORMAL_MUSIC_VOLUME;
     const unsubscribe = subscribeToNarration(updateVolume);
     return () => {
       unsubscribe();
