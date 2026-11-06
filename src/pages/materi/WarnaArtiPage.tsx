@@ -14,7 +14,6 @@ import {
   Droplets,
   Coffee,
   Crown,
-  Sparkles,
   Scale,
   type LucideIcon
 } from 'lucide-react';
@@ -24,7 +23,7 @@ import { BackgroundFrame } from '../../components/BackgroundFrame';
 export interface ColorDetail {
   id: string;
   name: string;
-  icon: LucideIcon;
+  icon?: LucideIcon;
   meaning: string;
   objectName: string;
   traitDesc: string;
@@ -179,7 +178,6 @@ export const colorDetails: ColorDetail[] = [
   {
     id: 'putih',
     name: 'Putih',
-    icon: Sparkles,
     meaning: 'Kilau/bintang — bersih, sederhana, terbuka',
     objectName: 'Kilau/bintang',
     traitDesc: 'bersih, sederhana, terbuka',
@@ -192,7 +190,7 @@ export const colorDetails: ColorDetail[] = [
   },
   {
     id: 'abu-abu',
-    name: 'Abu-abu',
+    name: 'Abu-Abu',
     icon: Scale,
     meaning: 'Timbangan — netral, profesional, seimbang',
     objectName: 'Timbangan',
@@ -305,12 +303,12 @@ export function WarnaArtiPage({ onBack, onHome }: WarnaArtiPageProps) {
               }}
             >
               {/* Icon Putih Besar (Smooth Scale & Float) */}
-              <ActiveIcon
+              {ActiveIcon && <ActiveIcon
                 id="warna-arti-card-icon"
                 className={`w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 2xl:w-44 2xl:h-44 stroke-[2.2] ${
                   activeColor.id === 'putih' ? 'text-slate-900' : 'text-white'
                 } filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.25)] transition-all duration-500 ease-out group-hover:scale-110 group-hover:rotate-6`}
-              />
+              />}
             </div>
           </div>
 
@@ -332,7 +330,7 @@ export function WarnaArtiPage({ onBack, onHome }: WarnaArtiPageProps) {
               <div id="warna-arti-title-wrapper" className="w-full flex justify-center items-center shrink-0">
                 <h2
                   id="warna-arti-title-text"
-                  className="font-serif font-black text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl uppercase tracking-wider text-center transition-all duration-300 drop-shadow-xs"
+                  className="font-serif font-black text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl  tracking-wider text-center transition-all duration-300 drop-shadow-xs"
                   style={{
                     color: activeColor.id === 'putih' ? '#ffffff' : activeColor.hex,
                     textShadow:
@@ -399,7 +397,7 @@ export function WarnaArtiPage({ onBack, onHome }: WarnaArtiPageProps) {
               >
                 {isSelected && (
                   <span
-                    className={`font-serif font-black text-[8px] min-[360px]:text-[9px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg select-none tracking-wider uppercase truncate px-1 transition-opacity duration-200 ${
+                    className={`font-serif font-black text-[8px] min-[360px]:text-[9px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg select-none tracking-wider  truncate px-1 transition-opacity duration-200 ${
                       item.id === 'putih' ? 'text-[#004760]' : 'text-white'
                     }`}
                   >

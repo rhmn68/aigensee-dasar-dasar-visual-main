@@ -3,7 +3,6 @@ import { playClick, playSynthesizerNote } from '../../utils/audio';
 import { ArrowLeft, ArrowRight, Play, Pause, RotateCcw, Volume2 } from 'lucide-react';
 import logoJenama from '../../assets/logo-jenama-primer.png';
 import { BackgroundFrame } from '../../components/BackgroundFrame';
-import judulRuangKosong from '../../assets/judul-ruangkosong.webp';
 import ruangKosongIcon from '../../assets/ruangkosong.webp';
 import ruangKosongAudioUrl from '../../assets/audio/ruangkosong.mp3';
 
@@ -230,12 +229,7 @@ export function RuangKosongPage({ onBack, onCariTahu }: RuangKosongPageProps) {
                 id="ruang-kosong-title-wrapper"
                 className="w-full flex justify-center items-start shrink-0 transition-transform duration-300 hover:scale-[1.02]"
               >
-                <img
-                  id="ruang-kosong-title-img"
-                  src={judulRuangKosong}
-                  alt="Ruang Kosong"
-                  className="w-auto max-w-[260px] sm:max-w-[360px] lg:max-w-[500px] 2xl:max-w-[590px] max-h-[16vh] lg:max-h-[19vh] 2xl:max-h-[22vh] h-auto object-contain drop-shadow-[0_8px_16px_rgba(16,185,129,0.25)]"
-                />
+                <h2 id="ruang-kosong-title-img" className="visual-title-text">Ruang Kosong</h2>
               </div>
 
               {/* 2. Paragraf Deskripsi */}
@@ -299,7 +293,7 @@ export function RuangKosongPage({ onBack, onCariTahu }: RuangKosongPageProps) {
 
                   {/* Time Display */}
                   <span className="font-mono text-[9px] sm:text-[11px] font-bold text-[#00354c] shrink-0 select-none">
-                    {formatTime(currentTime)} / {formatTime(duration)}
+                    {formatTime(currentTime)}/{formatTime(duration)}
                   </span>
 
                   {/* Animated Wave Indicator */}
@@ -336,7 +330,7 @@ export function RuangKosongPage({ onBack, onCariTahu }: RuangKosongPageProps) {
                   id="ruang-kosong-btn-cari-tahu"
                   type="button"
                   onClick={handleCariTahu}
-                  className="bg-[#00a1db] hover:bg-[#0bb2ef] text-white border-2 lg:border-3 border-[#004760] shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] rounded-xl lg:rounded-2xl px-6 lg:px-11 2xl:px-14 py-2 lg:py-2.5 2xl:py-3.5 font-serif font-black text-xs sm:text-sm lg:text-base 2xl:text-lg uppercase tracking-wider flex items-center gap-2 lg:gap-2.5 transition-all cursor-pointer group"
+                  className="bg-[#00a1db] hover:bg-[#0bb2ef] text-white border-2 lg:border-3 border-[#004760] shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] rounded-xl lg:rounded-2xl px-6 lg:px-11 2xl:px-14 py-2 lg:py-2.5 2xl:py-3.5 font-serif font-black text-xs sm:text-sm lg:text-base 2xl:text-lg  tracking-wider flex items-center gap-2 lg:gap-2.5 transition-all cursor-pointer group"
                 >
                   <span>Cari Tahu</span>
                   <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 2xl:w-6 2xl:h-6 transition-transform group-hover:translate-x-1" />

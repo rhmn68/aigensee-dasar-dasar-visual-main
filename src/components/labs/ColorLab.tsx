@@ -1,7 +1,7 @@
 import { InlineIcon } from '../InlineIcon';
 import React, { useState } from 'react';
 import { playClick, playSynthesizerNote } from '../../utils/audio';
-import { Sparkles, AlertTriangle, CheckCircle2 } from 'lucide-react';
+import { AlertTriangle, CheckCircle2 } from 'lucide-react';
 
 interface PaletteOption {
   id: string;
@@ -127,7 +127,7 @@ export function ColorLab() {
       <div className="flex items-center justify-between border-b-2 border-slate-900 pb-2.5">
         <div className="flex items-center gap-2">
           <span className="p-1.5 bg-orange-100 border border-slate-900 rounded-lg text-orange-600 font-bold text-xs">
-            LAB 01
+            Lab 01
           </span>
           <h3 className="font-bold font-serif text-slate-900 text-sm sm:text-base">
             Laboratorium Emosi Warna & Proporsi 60-30-10
@@ -164,7 +164,7 @@ export function ColorLab() {
         {/* Left: Palette Selection & 60-30-10 Indicator */}
         <div className="flex flex-col justify-between gap-2 overflow-y-auto pr-1">
           <div>
-            <p className="text-xs font-bold text-slate-600 uppercase tracking-wider mb-2">
+            <p className="text-xs font-bold text-slate-600  tracking-wider mb-2">
               Pilih Skema Palet Warna:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -249,9 +249,7 @@ export function ColorLab() {
             <div className="text-xl shrink-0">
               {selectedPalette.roboFeedback.state === 'bad' ? (
                 <AlertTriangle className="w-5 h-5 text-red-600 mt-0.5" />
-              ) : (
-                <Sparkles className="w-5 h-5 text-emerald-600 mt-0.5" />
-              )}
+              ) : null}
             </div>
             <div className="text-xs">
               <p className="font-black mb-0.5">{selectedPalette.roboFeedback.reaction}</p>
@@ -262,7 +260,7 @@ export function ColorLab() {
 
         {/* Right: Live Poster Canvas Mockup */}
         <div className="flex flex-col items-center justify-center p-3 rounded-xl border-2 border-slate-900 bg-slate-100 relative overflow-hidden">
-          <span className="absolute top-2 right-2 text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-slate-900 text-white font-bold tracking-wider">
+          <span className="absolute top-2 right-2 text-[10px]  font-mono px-2 py-0.5 rounded bg-slate-900 text-white font-bold tracking-wider">
             Live Preview
           </span>
 
@@ -276,7 +274,7 @@ export function ColorLab() {
             {posterTopic === 'food' ? (
               <>
                 <div
-                  className="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider inline-block mb-2 border border-slate-900/40"
+                  className="px-2.5 py-1 rounded-md text-[10px] font-black  tracking-wider inline-block mb-2 border border-slate-900/40"
                   style={{ backgroundColor: selectedPalette.secondary, color: selectedPalette.textColor }}
                 >
                   <InlineIcon name="Flame" /> Promo Spesial Hari Ini
@@ -285,7 +283,7 @@ export function ColorLab() {
                   className={`text-xl font-black mb-1 leading-tight ${selectedPalette.titleFont}`}
                   style={{ color: selectedPalette.textColor }}
                 >
-                  BURGER JUARA SUPER LEZAT
+                  Burger Juara Super Lezat
                 </h4>
                 <p className="text-[11px] mb-3 leading-relaxed" style={{ color: selectedPalette.textColor }}>
                   Daging panggang ganda dengan saus rahasia gurih lumer di mulut.
@@ -305,7 +303,7 @@ export function ColorLab() {
             ) : (
               <>
                 <div
-                  className="px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-wider inline-block mb-2 border border-slate-900/40"
+                  className="px-2.5 py-1 rounded-md text-[10px] font-black  tracking-wider inline-block mb-2 border border-slate-900/40"
                   style={{ backgroundColor: selectedPalette.secondary, color: selectedPalette.textColor }}
                 >
                   <InlineIcon name="LibraryBig" /> Pendaftaran Akademik
@@ -314,7 +312,7 @@ export function ColorLab() {
                   className={`text-xl font-black mb-1 leading-tight ${selectedPalette.titleFont}`}
                   style={{ color: selectedPalette.textColor }}
                 >
-                  AKADEMI DESAIN DIGITAL
+                  Akademi Desain Digital
                 </h4>
                 <p className="text-[11px] mb-3 leading-relaxed" style={{ color: selectedPalette.textColor }}>
                   Kurikulum terakreditasi internasional mencetak desainer handal.

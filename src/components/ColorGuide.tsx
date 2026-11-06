@@ -4,12 +4,12 @@ import { ArrowLeft, ArrowRight, HelpCircle, X } from 'lucide-react';
 const colorSteps = [
   {
     target: 'warna-arti-visual-card',
-    title: 'Kartu warna interaktif',
+    title: "Kartu Warna Interaktif",
     description: 'Arahkan kursor ke kartu besar di kiri. Kartu akan bergerak dan berubah bentuk menjadi lingkaran. Coba amati animasinya setelah panduan selesai!',
   },
   {
     target: 'warna-12-buttons',
-    title: 'Pilih dan jelajahi warna',
+    title: "Pilih dan Jelajahi Warna",
     description: 'Klik salah satu pilihan warna di bawah. Kartu, judul, dan penjelasan akan berubah mengikuti warna yang kamu pilih. Mulai dari biru, lalu jelajahi warna lainnya!',
   },
 ];
@@ -104,7 +104,7 @@ export function InteractionGuide({ steps, label }: { steps: GuideStep[]; label: 
           <button ref={closeRef} type="button" onClick={() => setOpen(false)} aria-label="Tutup panduan" className="absolute right-3 top-3 rounded-full bg-slate-100 p-2 text-slate-500 hover:bg-slate-200 focus-visible:outline-2 focus-visible:outline-blue-600">
             <X size={18} aria-hidden="true" />
           </button>
-          <p className="mb-2 text-xs font-bold uppercase tracking-wider text-blue-600">{label} · {step + 1} dari {steps.length}</p>
+          <p className="mb-2 text-xs font-bold  tracking-wider text-blue-600">{label} · {step + 1} dari {steps.length}</p>
           <h2 id="color-guide-title" className="pr-8 text-xl font-bold text-slate-800">{steps[step].title}</h2>
           <p id="color-guide-description" className="mt-3 text-sm leading-relaxed text-slate-600" aria-live="polite">{steps[step].description}</p>
           <div className="mt-6 flex items-center justify-between gap-3">

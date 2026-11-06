@@ -1,7 +1,7 @@
 import { InlineIcon } from '../InlineIcon';
 import React, { useState } from 'react';
 import { playClick, playSynthesizerNote } from '../../utils/audio';
-import { Eye, EyeOff, Sparkles, Wind, Maximize2 } from 'lucide-react';
+import { Eye, EyeOff, Wind, Maximize2 } from 'lucide-react';
 
 export function SpaceLab() {
   const [spaceLevel, setSpaceLevel] = useState<number>(75);
@@ -35,7 +35,7 @@ export function SpaceLab() {
       <div className="flex items-center justify-between border-b-2 border-slate-900 pb-2.5">
         <div className="flex items-center gap-2">
           <span className="p-1.5 bg-emerald-100 border border-slate-900 rounded-lg text-emerald-600 font-bold text-xs">
-            LAB 03
+            Lab 03
           </span>
           <h3 className="font-bold font-serif text-slate-900 text-sm sm:text-base">
             The Breathing Room: Eksperimen Ruang Napas Visual
@@ -62,7 +62,7 @@ export function SpaceLab() {
           {/* Slider Control */}
           <div className="p-3 bg-emerald-50/70 border-2 border-emerald-300 rounded-xl">
             <div className="flex justify-between items-center mb-1.5">
-              <label htmlFor="space-slider" className="text-xs font-black text-emerald-950 uppercase tracking-wider flex items-center gap-1.5">
+              <label htmlFor="space-slider" className="text-xs font-black text-emerald-950  tracking-wider flex items-center gap-1.5">
                 <Wind className="w-4 h-4 text-emerald-600" />
                 <span>Kadar Ruang Napas (Negative Space):</span>
               </label>
@@ -133,7 +133,7 @@ export function SpaceLab() {
             }`}
           >
             <div className="text-xl shrink-0 mt-0.5">
-              {isCrowded ? <><InlineIcon name="Frown" /></> : isOptimal ? <><InlineIcon name="Sparkles" /></> : <><InlineIcon name="Search" /></>}
+              {isCrowded ? <><InlineIcon name="Frown" /></> : isOptimal ? <></> : <><InlineIcon name="Search" /></>}
             </div>
             <div>
               <p className="font-black text-xs mb-0.5">
@@ -156,7 +156,7 @@ export function SpaceLab() {
 
         {/* Right: Live Canvas Layout that expands/contracts */}
         <div className="flex flex-col items-center justify-center p-3 rounded-xl border-2 border-slate-900 bg-slate-100 relative overflow-hidden">
-          <span className="absolute top-2 right-2 text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-slate-900 text-white font-bold tracking-wider">
+          <span className="absolute top-2 right-2 text-[10px]  font-mono px-2 py-0.5 rounded bg-slate-900 text-white font-bold tracking-wider">
             Kanvas Desain
           </span>
 
@@ -175,10 +175,10 @@ export function SpaceLab() {
 
             {/* Header section in card */}
             <div className="flex items-center justify-between border-b pb-1 border-slate-200">
-              <span className="text-[9px] font-black uppercase tracking-widest text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
-                STUDIO KREATIF
+              <span className="text-[9px] font-black  tracking-widest text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                Studio Kreatif
               </span>
-              <span className="text-[10px] font-mono text-slate-400">EDISI #07</span>
+              <span className="text-[10px] font-mono text-slate-400">Edisi #07</span>
             </div>
 
             {/* Main Title & Focal Point */}

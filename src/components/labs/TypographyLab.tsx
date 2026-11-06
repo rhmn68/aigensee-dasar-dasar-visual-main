@@ -27,7 +27,7 @@ const fontPresets: FontPreset[] = [
     id: 'chaotic-mix',
     name: <><InlineIcon name="CircleX" />{" Campur Aduk 4 Jenis Font"}</>,
     isGood: false,
-    titleClass: 'font-mono uppercase font-black tracking-widest',
+    titleClass: 'font-mono  font-black tracking-widest',
     bodyClass: 'font-serif font-bold text-xs',
     badge: 'Berantakan',
     description: 'Terlalu banyak jenis huruf berbeda membuat karya tidak konsisten dan tidak profesional.'
@@ -45,7 +45,7 @@ const fontPresets: FontPreset[] = [
     id: 'modern-sans-good',
     name: <><InlineIcon name="Star" />{" Modern Sans Superfamily"}</>,
     isGood: true,
-    titleClass: 'font-sans font-black tracking-tight text-slate-900 uppercase',
+    titleClass: 'font-sans font-black tracking-tight text-slate-900 ',
     bodyClass: 'font-sans font-medium text-xs text-slate-700 leading-relaxed',
     badge: 'Bersih & Modern',
     description: 'Satu keluarga font dengan kontras ketebalan (Bold untuk judul, Regular untuk teks isi).'
@@ -88,7 +88,7 @@ export function TypographyLab() {
       <div className="flex items-center justify-between border-b-2 border-slate-900 pb-2.5">
         <div className="flex items-center gap-2">
           <span className="p-1.5 bg-blue-100 border border-slate-900 rounded-lg text-blue-600 font-bold text-xs">
-            LAB 02
+            Lab 02
           </span>
           <h3 className="font-bold font-serif text-slate-900 text-sm sm:text-base">
             Klinik Tipografi: Bedah Keterbacaan & Font Pairing
@@ -113,7 +113,7 @@ export function TypographyLab() {
         <div className="flex flex-col justify-between gap-2 overflow-y-auto pr-1">
           {/* Step 1: Font Pair Presets */}
           <div>
-            <p className="text-xs font-bold text-slate-600 uppercase tracking-wider mb-1.5">
+            <p className="text-xs font-bold text-slate-600  tracking-wider mb-1.5">
               1. Pilih Kombinasi Font:
             </p>
             <div className="space-y-1.5">
@@ -228,15 +228,15 @@ export function TypographyLab() {
 
         {/* Right: Live Poster Canvas */}
         <div className="flex flex-col items-center justify-center p-3 rounded-xl border-2 border-slate-900 bg-slate-100 relative overflow-hidden">
-          <span className="absolute top-2 right-2 text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-slate-900 text-white font-bold tracking-wider">
+          <span className="absolute top-2 right-2 text-[10px]  font-mono px-2 py-0.5 rounded bg-slate-900 text-white font-bold tracking-wider">
             Pengumuman Sekolah
           </span>
 
           {/* Document Canvas */}
           <div className="w-full max-w-xs p-4 rounded-xl border-2 border-slate-900 bg-white shadow-[4px_4px_0px_#0f172a] transition-all">
             <div className="border-b-2 border-slate-900 pb-2 mb-2.5">
-              <span className="text-[9px] font-bold text-blue-700 tracking-wider uppercase block">
-                PENGUMUMAN RESMI SEKOLAH
+              <span className="text-[9px] font-bold text-blue-700 tracking-wider  block">
+                Pengumuman Resmi Sekolah
               </span>
               <h4
                 className={`${

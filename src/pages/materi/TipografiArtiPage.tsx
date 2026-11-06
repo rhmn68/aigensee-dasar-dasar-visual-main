@@ -8,24 +8,24 @@ import { BackgroundFrame } from '../../components/BackgroundFrame';
 const serifGuideSteps = [
   {
     target: 'tipografi-arti-specimen-card',
-    title: 'Kenali huruf Serif',
+    title: "Kenali Huruf Serif",
     description: 'Amati contoh huruf Aa pada kartu. Serif memiliki kait kecil di ujung guratan huruf. Gunakan kontrol di bagian bawah kartu untuk mencoba tampilannya.',
   },
   {
     target: 'tipografi-text-input',
     fallbackTarget: 'tipografi-arti-specimen-card',
-    title: 'Coba teks buatanmu',
+    title: "Coba Teks Buatanmu",
     description: 'Klik kolom “Ketik teks uji coba...” lalu tulis hingga 18 karakter. Contoh huruf pada kartu akan berubah mengikuti teks yang kamu ketik. Kolom ini tersedia pada layar tablet dan desktop.',
   },
   {
     target: 'tipografi-kerning-slider',
     fallbackTarget: 'tipografi-arti-specimen-card',
-    title: 'Atur jarak antarhuruf',
+    title: "Atur Jarak Antarhuruf",
     description: 'Geser pengaturan Kerning ke kiri atau kanan untuk merapatkan atau merenggangkan jarak antarhuruf. Amati perubahan pada contoh teks. Pengaturan ini tersedia pada layar tablet dan desktop.',
   },
   {
     target: 'tipografi-hierarchy-controls',
-    title: 'Coba ukuran dan hierarki',
+    title: "Coba Ukuran dan Hierarki",
     description: 'Klik H1, H2, H3, H4, atau P untuk mengubah ukuran contoh teks. Bandingkan tampilan judul besar dengan teks paragraf sebelum mulai bereksperimen.',
   },
 ];
@@ -63,7 +63,7 @@ const fontCategoryDetails: FontCategoryDetail[] = [
   },
   {
     id: 'sans-serif',
-    name: 'Sans-Serif (Modern)',
+    name: "Sans-Serif (Modern)",
     shortName: 'Sans',
     fontFamily: 'Plus Jakarta Sans, Inter, sans-serif',
     sampleLetter: 'Gg',
@@ -75,7 +75,7 @@ const fontCategoryDetails: FontCategoryDetail[] = [
   },
   {
     id: 'display',
-    name: 'Display / Judul',
+    name: "Display/Judul",
     shortName: 'Display',
     fontFamily: "'Changa One', Impact, sans-serif",
     sampleLetter: 'Qq',
@@ -305,16 +305,16 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                   <div className="flex items-center gap-1">
                     {(['h1', 'h2', 'h3', 'h4', 'p'] as TypoTag[]).map((tag) => (
                       <button
-                        key={tag}
+                        key={tag.toUpperCase()}
                         type="button"
                         onClick={() => handleTagChange(tag)}
-                        className={`px-1.5 py-0.5 rounded uppercase font-black transition-all cursor-pointer ${
+                        className={`px-1.5 py-0.5 rounded  font-black transition-all cursor-pointer ${
                           activeTag === tag
                             ? 'bg-[#004760] text-white shadow-[1px_1px_0px_#00354c]'
                             : 'bg-slate-100 text-[#004760] hover:bg-sky-50'
                         }`}
                       >
-                        {tag}
+                        {tag.toUpperCase()}
                       </button>
                     ))}
                   </div>
@@ -368,17 +368,17 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                     <div className="flex items-center gap-1 ml-auto">
                       {(['h1', 'h2', 'h3', 'h4', 'p'] as TypoTag[]).map((tag) => (
                         <button
-                          key={tag}
+                          key={tag.toUpperCase()}
                           type="button"
                           onClick={() => handleTagChange(tag)}
-                          className={`px-1.5 py-0.5 rounded text-[9px] uppercase font-black transition-all cursor-pointer ${
+                          className={`px-1.5 py-0.5 rounded text-[9px]  font-black transition-all cursor-pointer ${
                             activeTag === tag
                               ? 'bg-[#004760] text-white shadow-[1px_1px_0px_#00354c]'
                               : 'bg-slate-100 text-[#004760] hover:bg-sky-50'
                           }`}
                           title={`Tingkat Hierarki: ${tag.toUpperCase()}`}
                         >
-                          {tag}
+                          {tag.toUpperCase()}
                         </button>
                       ))}
                     </div>
@@ -407,20 +407,13 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                 <h2
                   id="tipografi-arti-title-text"
                   style={{ fontFamily: activeFont.fontFamily }}
-                  className="font-serif font-black text-lg min-[360px]:text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-6xl text-[#004760] uppercase tracking-tight drop-shadow-sm leading-tight transition-all duration-200 flex flex-col items-center"
+                  className="font-serif font-black text-lg min-[360px]:text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-6xl text-[#004760]  tracking-tight drop-shadow-sm leading-tight transition-all duration-200 flex flex-col items-center"
                 >
                   {activeFont.name.includes('(') ? (
                     <>
                       <span>{activeFont.name.split('(')[0].trim()}</span>
                       <span className="text-[10px] min-[360px]:text-xs sm:text-sm md:text-base lg:text-lg 2xl:text-2xl font-bold opacity-80 normal-case tracking-normal -mt-0.5">
                         ({activeFont.name.split('(')[1]}
-                      </span>
-                    </>
-                  ) : activeFont.name.includes('/') ? (
-                    <>
-                      <span>{activeFont.name.split('/')[0].trim()}</span>
-                      <span className="text-[10px] min-[360px]:text-xs sm:text-sm md:text-base lg:text-lg 2xl:text-2xl font-bold opacity-80 normal-case tracking-normal -mt-0.5">
-                        / {activeFont.name.split('/')[1].trim()}
                       </span>
                     </>
                   ) : (
@@ -491,7 +484,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                 } h-5 min-[360px]:h-6 sm:h-10 md:h-13 lg:h-16 xl:h-18 2xl:h-24`}
               >
                 {isSelected ? (
-                  <span className="font-serif font-black text-[8px] min-[360px]:text-[9px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg select-none tracking-wider uppercase truncate px-1 text-white">
+                  <span className="font-serif font-black text-[8px] min-[360px]:text-[9px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg select-none tracking-wider  truncate px-1 text-white">
                     {item.shortName}
                   </span>
                 ) : (

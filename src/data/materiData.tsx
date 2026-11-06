@@ -83,7 +83,7 @@ export const allMateris: Record<MateriId, MateriData> = {
           <><InlineIcon name="Eye" />{" High Contrast yang Sehat: Teks hitam pekat di atas kertas krem (#FAF8F5) atau teks putih bersih di atas navy blue gelap."}</>,
           <><InlineIcon name="Target" />{" Uji Menyipitkan Mata (Squint Test): Sipitkan matamu saat melihat desain; jika teks melebur dengan background, kontrasnya belum cukup!"}</>
         ],
-        tips: 'Pastikan teks utama selalu memiliki rasio kontras minimal 4.5:1 terhadap latar belakangnya.',
+        tips: "Pastikan teks utama selalu memiliki rasio kontras minimal 4.5: 1 terhadap latar belakangnya.",
         shotImageKey: 'shotWarnaCompare'
       },
       {
@@ -124,7 +124,7 @@ export const allMateris: Record<MateriId, MateriData> = {
         bullets: [
           <><InlineIcon name="Landmark" />{" Serif (Berkait): Memiliki sirip/kait kecil di ujung garis huruf (contoh: Playfair Display, Times). Menghadirkan wibawa, sejarah, keanggunan, dan formalitas."}</>,
           <><InlineIcon name="Laptop" />{" Sans-Serif (Tanpa Kait): Ujung huruf lurus, bersih, dan geometris (contoh: Inter, Plus Jakarta Sans). Memberi kesan modern, ramah, dan sangat mudah dibaca di layar digital."}</>,
-          <><InlineIcon name="Sparkles" />{" Display & Script: Bentuk dekoratif atau tulisan tangan unik. Khusus untuk judul pendek bertema; pantang digunakan untuk paragraf panjang!"}</>
+          <>{" Display & Script: Bentuk dekoratif atau tulisan tangan unik. Khusus untuk judul pendek bertema; pantang digunakan untuk paragraf panjang!"}</>
         ],
         tips: 'Jangan pernah gunakan font bersambung/berliku (script) untuk paragraf kecil. Seperti kata Robo: "Bikin orang malas membaca!"',
         shotImageKey: 'shotTypo',
@@ -142,9 +142,9 @@ export const allMateris: Record<MateriId, MateriData> = {
         concept: 'Hirarki menentukan urutan informasi yang dibaca pertama kali oleh mata audiens menggunakan kontras ukuran, ketebalan, dan warna.',
         bullets: [
           <><InlineIcon name="Megaphone" />{" Judul Utama (Heading 1): Ukuran terbesar dan paling tebal. Menarik perhatian audiens dalam sekejap mata."}</>,
-          <><InlineIcon name="Files" />{" Subjudul (Heading 2 / 3): Ukuran menengah untuk mengelompokkan topik bahasan menjadi bagian teratur."}</>,
+          <><InlineIcon name="Files" />{" Subjudul (Heading 2/3): Ukuran menengah untuk mengelompokkan topik bahasan menjadi bagian teratur."}</>,
           <><InlineIcon name="BookOpen" />{" Teks Isi (Body Text): Ukuran proporsional (14px - 16px) dengan ketebalan reguler untuk kenyamanan membaca berlama-lama."}</>,
-          <><InlineIcon name="Tag" />{" Keterangan / Caption: Ukuran kecil (11px - 12px) untuk catatan kaki, label, atau hak cipta."}</>
+          <><InlineIcon name="Tag" />{" Keterangan/Caption: Ukuran kecil (11px - 12px) untuk catatan kaki, label, atau hak cipta."}</>
         ],
         tips: 'Jika semua teks dibuat besar dan tebal, maka tidak ada satu pun yang terasa penting!',
         shotImageKey: 'shotTypo'
@@ -153,7 +153,7 @@ export const allMateris: Record<MateriId, MateriData> = {
         id: 'spasi-dan-leading',
         title: 'Spasi Baris (Leading) & Kerning',
         subtitle: 'Mencegah efek "tembok teks" yang menyesakkan mata',
-        concept: 'Keterbacaan teks sangat dipengaruhi oleh ruang nafas di antara baris (leading / line-height) dan antar huruf (tracking/kerning).',
+        concept: "Keterbacaan teks sangat dipengaruhi oleh ruang nafas di antara baris (leading/line-height) dan antar huruf (tracking/kerning).",
         bullets: [
           <><InlineIcon name="BrickWall" />{" Leading Terlalu Rapat: Baris atas dan bawah saling menabrak, menyebabkan mata sering salah baris saat membaca."}</>,
           <><InlineIcon name="Wind" />{" Leading Terlalu Lebar: Baris teks terlihat terpisah-pisah sehingga kalimat terasa tidak saling menyambung."}</>,
@@ -169,7 +169,7 @@ export const allMateris: Record<MateriId, MateriData> = {
         concept: 'Seperti pesan tegas di Shot 6: "Cukup satu atau dua jenis huruf saja, biar nggak berantakan."',
         bullets: [
           <><InlineIcon name="Drama" />{" Pasangan Klasik (Serif + Sans): Judul menggunakan Serif berbobot elegan, sementara paragraf isi menggunakan Sans-Serif bersih."}</>,
-          <><InlineIcon name="Shield" />{" Monokrom Keluarga Font (Superfamily): Cukup gunakan SATU font (misal: Inter) namun variasikan bobotnya (Bold untuk judul, Regular untuk isi)."}</>,
+          <><InlineIcon name="Shield" />{" Monokrom Keluarga Font (Superfamily): Cukup gunakan Satu font (misal: Inter) namun variasikan bobotnya (Bold untuk judul, Regular untuk isi)."}</>,
           <><InlineIcon name="Ban" />{" Hindari Font Serupa Tapi Tak Sama: Memadukan Arial dengan Helvetica terlihat seperti kesalahan ketidaksengajaan daripada desain yang terencana."}</>
         ],
         tips: 'Ingat prinsip kesederhanaan: jika 1 keluarga font sudah bisa menyelesaikan pekerjaan dengan rapi, kamu tidak butuh font kedua!',
@@ -213,7 +213,7 @@ export const allMateris: Record<MateriId, MateriData> = {
       },
       {
         id: 'micro-vs-macro-space',
-        title: 'Micro Space vs Macro Space',
+        title: "Micro Space Vs Macro Space",
         subtitle: 'Dua tingkatan ruang kosong yang menyusun harmoni tata letak',
         concept: 'Ruang kosong bekerja pada dua skala yang saling melengkapi: skala detail kecil (micro) dan skala layout keseluruhan (macro).',
         bullets: [
@@ -239,7 +239,7 @@ export const allMateris: Record<MateriId, MateriData> = {
       },
       {
         id: 'analogi-buku-padat',
-        title: 'Analogi Buku Padat vs Buku Bernapas',
+        title: "Analogi Buku Padat Vs Buku Bernapas",
         subtitle: 'Pelajaran dari Shot 7 storyboard',
         concept: 'Sebagaimana Robo mengilustrasikan: "Coba bandingkan buku padat dengan yang ada jaraknya, mana yang lebih nyaman?"',
         bullets: [

@@ -2,7 +2,7 @@ import { InlineIcon } from '../InlineIcon';
 import React, { useState } from 'react';
 import { playClick, playSynthesizerNote } from '../../utils/audio';
 import confetti from 'canvas-confetti';
-import { Sparkles, CheckCircle2, RotateCcw, Palette, Type, Maximize2, Scale } from 'lucide-react';
+import { CheckCircle2, RotateCcw, Palette, Type, Maximize2, Scale } from 'lucide-react';
 import roboHappyImg from '../../assets/images/page_11_image_9.png';
 
 export function SummaryLab() {
@@ -75,7 +75,7 @@ export function SummaryLab() {
       <div className="flex items-center justify-between border-b-2 border-slate-900 pb-2.5">
         <div className="flex items-center gap-2">
           <span className="p-1.5 bg-sky-100 border border-slate-900 rounded-lg text-sky-700 font-bold text-xs">
-            LAB 05
+            Lab 05
           </span>
           <h3 className="font-bold font-serif text-slate-900 text-sm sm:text-base">
             Studio Harmoni: Gabungkan 4 Pilar Desain Visual
@@ -94,7 +94,7 @@ export function SummaryLab() {
             onClick={handleSelectAll}
             className="px-2.5 py-1 text-xs font-bold rounded-lg border border-slate-900 bg-orange-500 hover:bg-orange-400 text-white shadow-[2px_2px_0px_#0f172a] transition-all cursor-pointer"
           >
-            Aktifkan Semua <InlineIcon name="Sparkles" />
+            Aktifkan Semua
           </button>
         </div>
       </div>
@@ -104,7 +104,7 @@ export function SummaryLab() {
         {/* Left: 4 Element Toggles */}
         <div className="flex flex-col justify-between gap-2 overflow-y-auto pr-1">
           <div>
-            <p className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+            <p className="text-xs font-bold text-slate-700  tracking-wider mb-2">
               Uji Coba Pengaruh Tiap Elemen Pada Desain:
             </p>
             <div className="space-y-2">
@@ -248,7 +248,7 @@ export function SummaryLab() {
 
         {/* Right: Live Poster Canvas Transforming */}
         <div className="flex flex-col items-center justify-center p-3 rounded-xl border-2 border-slate-900 bg-slate-100 relative overflow-hidden">
-          <span className="absolute top-2 right-2 text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-slate-900 text-white font-bold tracking-wider">
+          <span className="absolute top-2 right-2 text-[10px]  font-mono px-2 py-0.5 rounded bg-slate-900 text-white font-bold tracking-wider">
             Kanvas Harmoni
           </span>
 
@@ -270,7 +270,7 @@ export function SummaryLab() {
                 activeElements.warna ? 'bg-orange-500 text-white' : 'bg-slate-400 text-slate-900'
               }`}
             >
-              PAMERAN KREATIF 2026
+              Pameran Kreatif 2026
             </div>
 
             {/* Title */}

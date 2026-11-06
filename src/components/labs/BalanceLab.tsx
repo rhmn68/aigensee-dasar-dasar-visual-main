@@ -13,7 +13,7 @@ interface VisualBlock {
 }
 
 const availableBlocks: VisualBlock[] = [
-  { id: 'img', name: 'Foto / Ilustrasi', icon: <><InlineIcon name="Image" /></>, weight: 3, color: 'bg-emerald-100 border-emerald-500 text-emerald-900' },
+  { id: 'img', name: "Foto/Ilustrasi", icon: <><InlineIcon name="Image" /></>, weight: 3, color: 'bg-emerald-100 border-emerald-500 text-emerald-900' },
   { id: 'text', name: 'Teks Judul (Aa)', icon: <><InlineIcon name="Type" /></>, weight: 2, color: 'bg-purple-100 border-purple-500 text-purple-900' },
   { id: 'circle', name: 'Lingkaran Warna', icon: <><InlineIcon name="Circle" color="#2563eb" /></>, weight: 1, color: 'bg-blue-100 border-blue-500 text-blue-900' },
   { id: 'shape', name: 'Kotak Ruang', icon: <><InlineIcon name="Square" /></>, weight: 1, color: 'bg-amber-100 border-amber-500 text-amber-900' }
@@ -102,7 +102,7 @@ export function BalanceLab() {
       <div className="flex items-center justify-between border-b-2 border-slate-900 pb-2">
         <div className="flex items-center gap-2">
           <span className="p-1.5 bg-purple-100 border border-slate-900 rounded-lg text-purple-600 font-bold text-xs">
-            LAB 04
+            Lab 04
           </span>
           <h3 className="font-bold font-serif text-slate-900 text-sm sm:text-base">
             Timbangan Fisika: Bobot Visual Neraca Harmoni
@@ -128,7 +128,7 @@ export function BalanceLab() {
             onClick={() => handleApplyPreset('asymmetric')}
             className="px-2 py-1 text-[11px] font-bold rounded-lg border border-slate-900 bg-purple-100 hover:bg-purple-200 text-purple-900 shadow-[2px_2px_0px_#0f172a] transition-all"
           >
-            <InlineIcon name="Sparkles" /> Asimetris
+             Asimetris
           </button>
           <button
             type="button"
@@ -152,7 +152,7 @@ export function BalanceLab() {
             </span>
             {isBalanced ? (
               <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full border border-emerald-400">
-                <CheckCircle2 className="w-3.5 h-3.5" /> SEIMBANG & HARMONIS!
+                <CheckCircle2 className="w-3.5 h-3.5" /> Seimbang & Harmonis!
               </span>
             ) : (
               <span className="inline-flex items-center gap-1 text-xs font-bold text-red-800 bg-red-100 px-2.5 py-0.5 rounded-full border border-red-400">
@@ -233,7 +233,7 @@ export function BalanceLab() {
         {/* Right: Block Controls & Legend */}
         <div className="flex flex-col justify-between gap-2 overflow-y-auto pr-1">
           <div>
-            <p className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+            <p className="text-xs font-bold text-slate-700  tracking-wider mb-2">
               Tambah Balok Elemen Desain:
             </p>
             <div className="space-y-2">

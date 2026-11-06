@@ -2,19 +2,19 @@ import { InteractionGuide } from '../../components/ColorGuide';
 import { InlineIcon } from '../../components/InlineIcon';
 import React, { useState } from 'react';
 import { playClick } from '../../utils/audio';
-import { ArrowLeft, Home, Scale, Sparkles } from 'lucide-react';
+import { ArrowLeft, Home, Scale } from 'lucide-react';
 import logoJenama from '../../assets/logo-jenama-primer.png';
 import { BackgroundFrame } from '../../components/BackgroundFrame';
 
 const balanceGuideSteps = [
   {
     target: 'keseimbangan-arti-balance-card',
-    title: 'Amati bobot visual di kedua sisi',
+    title: "Amati Bobot Visual di Kedua Sisi",
     description: 'Perhatikan elemen di kiri dan kanan timbangan. Pada keseimbangan simetris, bentuk, ukuran, dan susunannya serupa seperti pantulan cermin sehingga kedua sisi terasa sama berat.',
   },
   {
     target: 'keseimbangan-selector-buttons',
-    title: 'Jelajahi jenis keseimbangan',
+    title: "Jelajahi Jenis Keseimbangan",
     description: 'Klik pilihan 2, 3, atau 4 di bawah untuk melihat keseimbangan Asimetris, Radial, dan Mosaik. Ilustrasi serta penjelasannya akan berubah. Bandingkan cara tiap jenis membagi bobot visual, lalu klik Simetris untuk kembali.',
   },
 ];
@@ -42,7 +42,7 @@ const balanceTypeDetails: BalanceTypeDetail[] = [
     id: 'simetris',
     name: 'Keseimbangan Simetris (Formal)',
     shortName: 'Simetris',
-    badge: 'TIPE KESEIMBANGAN #1 · SIMETRIS',
+    badge: "Tipe Keseimbangan #1 · Simetris",
     description: 'Elemen di sisi kiri dan kanan poros tengah memiliki bobot, ukuran, dan bentuk yang persis sama atau serupa seperti pantulan cermin. Menghadirkan kesan agung, berwibawa, stabil, dan teratur. Sering digunakan pada logo institusi resmi, gedung pemerintahan, dan karya bernuansa formal.',
     traits: ['Stabil & Tenang', 'Cermin Simetris', 'Wibawa Formal', 'Teratur'],
     themeColor: '#004760',
@@ -54,19 +54,19 @@ const balanceTypeDetails: BalanceTypeDetail[] = [
     id: 'asimetris',
     name: 'Keseimbangan Asimetris (Dinamis)',
     shortName: 'Asimetris',
-    badge: 'TIPE KESEIMBANGAN #2 · ASIMETRIS',
+    badge: "Tipe Keseimbangan #2 · Asimetris",
     description: 'Elemen di kedua sisi berbeda bentuk dan ukurannya, namun bobot visualnya tetap seimbang melalui permainan kontras warna, posisi, dan ruang kosong. Memberikan kesan modern, energetik, dan memancing rasa penasaran audiens tanpa terlihat miring atau berat sebelah.',
     traits: ['Modern & Hidup', 'Kontras Bobot', 'Energetik', 'Dinamis'],
     themeColor: '#00a1db',
     tilt: 0,
     leftItems: [<><InlineIcon name="Palette" /></>],
-    rightItems: [<><InlineIcon name="Star" /></>, <><InlineIcon name="Sparkles" /></>, <><InlineIcon name="Tag" /></>]
+    rightItems: [<><InlineIcon name="Star" /></>, <></>, <><InlineIcon name="Tag" /></>]
   },
   {
     id: 'radial',
     name: 'Keseimbangan Radial (Melingkar)',
     shortName: 'Radial',
-    badge: 'TIPE KESEIMBANGAN #3 · RADIAL',
+    badge: "Tipe Keseimbangan #3 · Radial",
     description: 'Seluruh elemen visual memancar keluar dari satu titik pusat tengah layaknya sinar matahari, riak air, atau kelopak bunga. Sangat ampuh untuk mengarahkan pandangan audiens langsung ke titik fokus inti di tengah desain.',
     traits: ['Pusat Inti', 'Memancar Rata', 'Fokus Sentral', 'Riak Harmoni'],
     themeColor: '#ea580c',
@@ -76,9 +76,9 @@ const balanceTypeDetails: BalanceTypeDetail[] = [
   },
   {
     id: 'kristalografis',
-    name: 'Keseimbangan Mosaik (All-over)',
+    name: 'Keseimbangan Mosaik (All-Over)',
     shortName: 'Mosaik',
-    badge: 'TIPE KESEIMBANGAN #4 · MOSAIK',
+    badge: "Tipe Keseimbangan #4 · Mosaik",
     description: 'Penataan elemen dengan bobot visual yang tersebar merata ke seluruh bidang tanpa ada satu objek yang terlalu mendominasi. Memberikan kesan tekstur kaya, ramai beraturan, dan keindahan pola berkelanjutan.',
     traits: ['Tersebar Merata', 'Pola Berulang', 'Mosaik Kaya', 'Tekstur Rapi'],
     themeColor: '#10b981',
@@ -197,12 +197,12 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
             >
               {/* Header Visualizer */}
               <div id="keseimbangan-arti-card-header" className="w-full flex items-center justify-between border-b-2 border-[#004760] pb-1.5 sm:pb-2">
-                <span id="keseimbangan-arti-card-title" className="font-serif font-black text-[9px] sm:text-xs lg:text-sm text-[#004760] uppercase tracking-wider">
+                <span id="keseimbangan-arti-card-title" className="font-serif font-black text-[9px] sm:text-xs lg:text-sm text-[#004760]  tracking-wider">
                   Timbangan Bobot Visual
                 </span>
                 <span
                   style={{ backgroundColor: activeBalance.themeColor }}
-                  className="px-2 py-0.5 rounded-full text-white text-[9px] sm:text-[10px] font-black tracking-wider uppercase border border-[#004760]"
+                  className="px-2 py-0.5 rounded-full text-white text-[9px] sm:text-[10px] font-black tracking-wider  border border-[#004760]"
                 >
                   {activeBalance.shortName}
                 </span>
@@ -218,14 +218,14 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
                     </div>
                     {['top-1 left-1/2 -translate-x-1/2', 'bottom-1 left-1/2 -translate-x-1/2', 'left-1 top-1/2 -translate-y-1/2', 'right-1 top-1/2 -translate-y-1/2'].map((pos, pIdx) => (
                       <div key={pIdx} className={`absolute ${pos} w-7 h-7 rounded-full bg-white border-2 border-[#004760] flex items-center justify-center text-xs shadow-xs`}>
-                        <InlineIcon name="Sparkles" />
+
                       </div>
                     ))}
                   </div>
                 ) : activeBalance.id === 'kristalografis' ? (
                   /* Mosaik Visualizer: Pola grid merata */
                   <div className="grid grid-cols-3 gap-2 p-3 bg-[#FAF8F5] rounded-2xl border-2 border-[#004760] w-full max-w-[240px]">
-                    {[<><InlineIcon name="Flower2" /></>, <><InlineIcon name="Leaf" /></>, <><InlineIcon name="Star" /></>, <><InlineIcon name="Gem" /></>, <><InlineIcon name="Palette" /></>, <><InlineIcon name="DraftingCompass" /></>, <><InlineIcon name="Tag" /></>, <><InlineIcon name="Sparkles" /></>, <><InlineIcon name="Sprout" /></>].map((icon, idx) => (
+                    {[<><InlineIcon name="Flower2" /></>, <><InlineIcon name="Leaf" /></>, <><InlineIcon name="Star" /></>, <><InlineIcon name="Gem" /></>, <><InlineIcon name="Palette" /></>, <><InlineIcon name="DraftingCompass" /></>, <><InlineIcon name="Tag" /></>, <></>, <><InlineIcon name="Sprout" /></>].map((icon, idx) => (
                       <div key={idx} className="aspect-square rounded-xl bg-white border border-[#004760] flex items-center justify-center text-sm sm:text-base shadow-xs">
                         {icon}
                       </div>
@@ -293,14 +293,14 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
               <div id="keseimbangan-arti-title-wrapper" className="w-full flex flex-col items-center shrink-0">
                 <span
                   id="keseimbangan-arti-badge"
-                  className="font-serif font-black text-[9px] sm:text-xs lg:text-sm text-[#004760] uppercase tracking-widest px-2.5 sm:px-3.5 py-0.5 sm:py-1 rounded-full border-1.5 sm:border-2 border-[#004760] bg-white shadow-[2px_2px_0px_#00354c] mb-1 sm:mb-1.5"
+                  className="font-serif font-black text-[9px] sm:text-xs lg:text-sm text-[#004760]  tracking-widest px-2.5 sm:px-3.5 py-0.5 sm:py-1 rounded-full border-1.5 sm:border-2 border-[#004760] bg-white shadow-[2px_2px_0px_#00354c] mb-1 sm:mb-1.5"
                 >
                   {activeBalance.badge}
                 </span>
 
                 <h2
                   id="keseimbangan-arti-title-text"
-                  className="font-serif font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-[#004760] uppercase tracking-tight drop-shadow-sm leading-tight transition-all duration-200"
+                  className="font-serif font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-[#004760]  tracking-tight drop-shadow-sm leading-tight transition-all duration-200"
                 >
                   {activeBalance.name}
                 </h2>
@@ -368,7 +368,7 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
                 } h-6 min-[360px]:h-7 sm:h-10 md:h-13 lg:h-16 xl:h-18 2xl:h-24`}
               >
                 {isSelected ? (
-                  <span className="font-serif font-black text-[9px] min-[360px]:text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg select-none tracking-wider uppercase truncate px-1 text-white">
+                  <span className="font-serif font-black text-[9px] min-[360px]:text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg select-none tracking-wider  truncate px-1 text-white">
                     {item.shortName}
                   </span>
                 ) : (

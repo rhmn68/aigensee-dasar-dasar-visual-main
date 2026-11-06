@@ -11,10 +11,6 @@ import { playClick } from '../../utils/audio';
 import { ArrowLeft, ArrowRight, Home } from 'lucide-react';
 import logoJenama from '../../assets/logo-jenama-primer.png';
 
-import judulWarna from '../../assets/judul-warna.webp';
-import judulTipografi from '../../assets/judul-tifografi.webp';
-import judulRuangKosong from '../../assets/judul-ruangkosong.webp';
-import judulKeseimbangan from '../../assets/judul-keseimbangan.webp';
 
 interface MateriPageProps {
   currentMateriId: MateriId;
@@ -37,23 +33,6 @@ export function MateriPage({
 
   const currentModuleIndex = materiOrder.indexOf(currentMateriId);
   const nextModuleId = currentModuleIndex + 1 < materiOrder.length ? materiOrder[currentModuleIndex + 1] : null;
-
-  const getJudulWebp = (id: MateriId) => {
-    switch (id) {
-      case 'warna':
-        return judulWarna;
-      case 'tipografi':
-        return judulTipografi;
-      case 'ruang-kosong':
-        return judulRuangKosong;
-      case 'keseimbangan':
-        return judulKeseimbangan;
-      default:
-        return null;
-    }
-  };
-
-  const currentJudulWebp = getJudulWebp(currentMateriId);
 
   const handleNextSub = () => {
     playClick();
@@ -119,22 +98,14 @@ export function MateriPage({
 
           {/* Module Title with Webp Graphic when available */}
           <div className="flex items-center gap-2">
-            {currentJudulWebp ? (
-              <img
-                src={currentJudulWebp}
-                alt={materi.title}
-                className="h-6 sm:h-7 md:h-8 w-auto object-contain drop-shadow-xs"
-              />
-            ) : (
               <div>
-                <span className="text-[9px] sm:text-[10px] font-mono font-bold text-sky-600 uppercase tracking-widest block">
-                  MODUL {materi.orderNumber}
+                <span className="text-[9px] sm:text-[10px] font-mono font-bold text-sky-600  tracking-widest block">
+                  Modul {materi.orderNumber}
                 </span>
                 <h1 className="font-serif font-black text-xs sm:text-base text-slate-900 leading-none">
                   {materi.title} ({materi.englishTitle})
                 </h1>
               </div>
-            )}
           </div>
         </div>
 
@@ -215,7 +186,7 @@ export function MateriPage({
             {/* Tag & Subtitle */}
             <div className="flex items-center justify-between mb-1.5">
               <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold border border-slate-900 ${materi.badgeColor}`}>
-                SUB-MATERI {activeSubIndex + 1} DARI {materi.subMateriList.length}
+                Sub-materi {activeSubIndex + 1} Dari {materi.subMateriList.length}
               </span>
               <span className="text-[10px] font-mono text-slate-500 font-bold">
                 {materi.title}
@@ -271,7 +242,7 @@ export function MateriPage({
               className="h-12 w-auto object-contain shrink-0 drop-shadow-xs"
             />
             <div className="text-[11px]">
-              <span className="font-bold text-slate-900 block text-[10px] uppercase text-orange-600">
+              <span className="font-bold text-slate-900 block text-[10px]  text-orange-600">
                 Pesan Penting Robo:
               </span>
               <p className="text-slate-700 italic leading-snug">
@@ -310,7 +281,7 @@ export function MateriPage({
         <button
           type="button"
           onClick={handleNextSub}
-          className="brutalist-button px-4 py-1 rounded-lg text-xs font-bold uppercase flex items-center gap-1.5 cursor-pointer"
+          className="brutalist-button px-4 py-1 rounded-lg text-xs font-bold  flex items-center gap-1.5 cursor-pointer"
         >
           <span>
             {activeSubIndex + 1 < materi.subMateriList.length

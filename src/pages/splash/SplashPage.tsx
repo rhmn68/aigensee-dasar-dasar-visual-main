@@ -4,8 +4,6 @@ import { allMateris } from '../../data/materiData';
 import { playClick } from '../../utils/audio';
 import logoJenama from '../../assets/logo-jenama-primer.png';
 import gambarBackground from '../../assets/gambar-background.webp';
-import judulAtas from '../../assets/Judul Atas.webp';
-import judulBawah from '../../assets/Judul Bawah.webp';
 import iconWarna from '../../assets/icon-warna.svg';
 import iconTipografi from '../../assets/icon-tipografi.svg';
 import iconRuangKosong from '../../assets/icon-ruangkosong.svg';
@@ -135,22 +133,12 @@ export function SplashPage({
         >
         {/* Title Atas: "DASAR DESAIN" - capped at 2xl:max-w-[1000px] */}
         <div className="transition-transform duration-300 scale-[1.2] drop-shadow-[0_12px_24px_rgba(0,87,135,0.35)]">
-          <img
-            id="splash-title-atas"
-            src={judulAtas}
-            alt="Dasar Desain"
-            className="w-full max-w-[300px] xs:max-w-[360px] sm:max-w-[460px] md:max-w-[620px] lg:max-w-[760px] xl:max-w-[880px] 2xl:max-w-[1000px] max-h-[26vh] h-auto object-contain"
-          />
+          <h2 id="splash-title-atas" className="visual-title-text splash-copy-title">Dasar Desain</h2>
         </div>
 
         {/* Title Bawah: "VISUAL" - capped at 2xl:max-w-[550px] */}
         <div className="-mt-3  lg:-mt-3 xl:-mt-6 2xl:-mt-8 transition-transform duration-300 scale-[1.2] drop-shadow-[0_12px_24px_rgba(0,87,135,0.35)]">
-          <img
-            id="splash-title-bawah"
-            src={judulBawah}
-            alt="Visual"
-            className="w-full max-w-[165px] xs:max-w-[200px] sm:max-w-[255px] md:max-w-[340px] lg:max-w-[420px] xl:max-w-[485px] 2xl:max-w-[550px] max-h-[22vh] h-auto object-contain"
-          />
+          <h2 id="splash-title-bawah" className="visual-title-text splash-copy-title">Visual</h2>
         </div>
         </div>
       </main>

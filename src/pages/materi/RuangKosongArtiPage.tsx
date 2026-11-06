@@ -9,12 +9,12 @@ import { BackgroundFrame } from '../../components/BackgroundFrame';
 const macroGuideSteps = [
   {
     target: 'ruang-kosong-arti-canvas-card',
-    title: 'Amati ruang di sekeliling kanvas',
+    title: "Amati Ruang di Sekeliling Kanvas",
     description: 'Perhatikan jarak antara bingkai putus-putus dan kotak putih di dalamnya. Jarak ini adalah margin: ruang makro yang memberi elemen tempat untuk bernapas.',
   },
   {
     target: 'ruang-makro-simulation-controls',
-    title: 'Bandingkan Sesak, Sedang, dan Lega',
+    title: "Bandingkan Sesak, Sedang, dan Lega",
     description: 'Klik Sesak, Sedang, atau Lega untuk mengubah margin pada kanvas. Amati bagaimana ruang di tepi menyempit atau melebar, lalu bandingkan tampilan yang terasa paling nyaman.',
   },
 ];
@@ -41,7 +41,7 @@ const spacePrinciples: SpacePrincipleDetail[] = [
     id: 'makro',
     name: 'Ruang Makro (Macro Space)',
     shortName: 'Makro',
-    badge: 'PRINSIP RUANG #1 · MAKRO',
+    badge: "Prinsip Ruang #1 · Makro",
     iconName: 'Layout',
     description: 'Ruang kosong besar di sekeliling layout utama dan margin tepi kanvas. Ruang makro berfungsi seperti bingkai tak terlihat yang memisahkan karya dari lingkungan luar, memberikan napas pertama bagi audiens, dan mencegah elemen menempel kaku ke batas layar.',
     traits: ['Margin Luas', 'Lega & Tenang', 'Bingkai Alami', 'Bebas Sesak'],
@@ -52,7 +52,7 @@ const spacePrinciples: SpacePrincipleDetail[] = [
     id: 'mikro',
     name: 'Ruang Mikro (Micro Space)',
     shortName: 'Mikro',
-    badge: 'PRINSIP RUANG #2 · MIKRO',
+    badge: "Prinsip Ruang #2 · Mikro",
     iconName: 'AlignJustify',
     description: 'Jeda halus berukuran kecil di antara kata, antarhuruf (kerning), dan antarbaris kalimat (leading). Ruang mikro menjamin teks mudah dicerna tanpa membuat mata pembaca cepat lelah.',
     traits: ['Keterbacaan', 'Spasi Baris', 'Kerning Presisi', 'Jeda Halus'],
@@ -63,7 +63,7 @@ const spacePrinciples: SpacePrincipleDetail[] = [
     id: 'proksimitas',
     name: 'Hukum Proksimitas (Proximity)',
     shortName: 'Proksimitas',
-    badge: 'PRINSIP RUANG #3 · PROKSIMITAS',
+    badge: "Prinsip Ruang #3 · Proksimitas",
     iconName: 'MoveHorizontal',
     description: 'Elemen-elemen yang saling berhubungan didekatkan posisinya, sementara elemen yang berbeda topik diberi jarak ruang kosong yang lebih lebar. Ini membantu audiens memproses kelompok informasi secara logis dan cepat.',
     traits: ['Pengelompokan', 'Struktur Logis', 'Alur Pikiran', 'Hirarki Cepat'],
@@ -74,7 +74,7 @@ const spacePrinciples: SpacePrincipleDetail[] = [
     id: 'fokus',
     name: 'Fokus Melalui Ruang (Isolation)',
     shortName: 'Fokus',
-    badge: 'PRINSIP RUANG #4 · FOKUS',
+    badge: "Prinsip Ruang #4 · Fokus",
     iconName: 'Eye',
     description: 'Sebuah objek yang dikelilingi oleh banyak ruang kosong akan langsung menarik perhatian mata sebelum hal lainnya. Ruang kosong menjadi lampu sorot visual alami tanpa perlu warna yang terlalu mencolok.',
     traits: ['Pusat Perhatian', 'Daya Tarik Kuat', 'Minimalis', 'Sorotan Instan'],
@@ -85,8 +85,8 @@ const spacePrinciples: SpacePrincipleDetail[] = [
     id: 'irama',
     name: 'Irama Napas (Visual Rhythm)',
     shortName: 'Irama',
-    badge: 'PRINSIP RUANG #5 · IRAMA NAPAS',
-    iconName: 'Sparkles',
+    badge: "Prinsip Ruang #5 · Irama Napas",
+    iconName: 'Maximize2',
     description: 'Variasi jarak rapat dan renggang secara berirama dalam sebuah karya. Menciptakan dinamika yang hidup seperti musik, di mana nada dan jeda hening saling melengkapi keindahan alur komposisi.',
     traits: ['Harmoni Dinamis', 'Variasi Irama', 'Keseimbangan', 'Karya Berkelas'],
     themeColor: '#f59e0b',
@@ -221,8 +221,8 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
                     }`}
                   >
                     <div className="w-full h-full bg-white rounded-lg border-2 border-[#004760] shadow-[2px_2px_0px_#00354c] flex flex-col items-center justify-center p-2 text-center">
-                      <span className="font-serif font-black text-[9px] min-[360px]:text-[10px] sm:text-xs text-[#004760] uppercase">
-                        {spaceLevel === 'sesak' ? <><InlineIcon name="TriangleAlert" />{" Kanvas Sesak"}</> : <><InlineIcon name="Sparkles" />{" Kanvas Lega"}</>}
+                      <span className="font-serif font-black text-[9px] min-[360px]:text-[10px] sm:text-xs text-[#004760] ">
+                        {spaceLevel === 'sesak' ? <><InlineIcon name="TriangleAlert" />{" Kanvas Sesak"}</> : <>{" Kanvas Lega"}</>}
                       </span>
                       <p className="text-[8px] min-[360px]:text-[9px] sm:text-[10px] text-slate-600 mt-0.5 leading-snug">
                         {spaceLevel === 'sesak' ? 'Elemen menempel ke tepi' : 'Margin memberi ruang bernapas'}
@@ -239,7 +239,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
                         letterSpacing: spaceLevel === 'sesak' ? '-1px' : spaceLevel === 'sedang' ? '1px' : '4px',
                         lineHeight: spaceLevel === 'sesak' ? '1' : spaceLevel === 'sedang' ? '1.3' : '1.7'
                       }}
-                      className="font-serif font-black text-xs min-[360px]:text-sm sm:text-base lg:text-lg text-[#004760] uppercase transition-all duration-300"
+                      className="font-serif font-black text-xs min-[360px]:text-sm sm:text-base lg:text-lg text-[#004760]  transition-all duration-300"
                     >
                       Keterbacaan Huruf
                     </h5>
@@ -292,7 +292,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
                         <div className="p-1 rounded bg-slate-200 border border-slate-400 text-[7px] text-slate-600 font-bold">Stiker Grafis</div>
                         <div className="bg-[#ea580c] text-white px-2 py-1 rounded-lg border-2 border-[#004760] shadow-[1px_1px_0px_#00354c] text-center scale-90">
                           <Eye className="w-3 h-3 mx-auto" />
-                          <span className="font-serif font-black text-[7.5px] uppercase block">Tenggelam</span>
+                          <span className="font-serif font-black text-[7.5px]  block">Tenggelam</span>
                         </div>
                         <div className="p-1 rounded bg-slate-200 border border-slate-400 text-[7px] text-slate-600 font-bold">Tombol Lain</div>
                         <div className="p-1 rounded bg-slate-200 border border-slate-400 text-[7px] text-slate-600 font-bold">Garis Hiasan</div>
@@ -310,7 +310,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
                         </div>
                         <div className="bg-[#ea580c] text-white px-3.5 py-1.5 rounded-xl border-2 border-[#004760] shadow-[2px_2px_0px_#00354c] text-center scale-100">
                           <Eye className="w-4 h-4 mx-auto mb-0.5" />
-                          <span className="font-serif font-black text-[8.5px] sm:text-[9.5px] uppercase block">
+                          <span className="font-serif font-black text-[8.5px] sm:text-[9.5px]  block">
                             Fokus Terlihat
                           </span>
                         </div>
@@ -326,7 +326,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
                       <div className="flex flex-col items-center justify-center w-full h-full p-4 transition-all duration-500 animate-fadeIn">
                         <div className="bg-[#ea580c] text-white px-5 py-3 rounded-2xl border-2 sm:border-3 border-[#004760] shadow-[3px_3px_0px_#00354c] sm:shadow-[4px_4px_0px_#00354c] text-center transform scale-110 sm:scale-125 transition-transform duration-300">
                           <Eye className="w-5 h-5 sm:w-6 sm:h-6 mx-auto mb-1 animate-bounce" />
-                          <span className="font-serif font-black text-[10px] sm:text-xs uppercase tracking-wider block">
+                          <span className="font-serif font-black text-[10px] sm:text-xs  tracking-wider block">
                             Pusat Perhatian Murni
                           </span>
                           <span className="text-[7.5px] sm:text-[8.5px] font-bold opacity-90 block">
@@ -356,7 +356,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
                   <button
                     type="button"
                     onClick={() => handleSpaceChange('sesak')}
-                    className={`px-1.5 py-0.5 rounded uppercase font-black transition-all cursor-pointer ${
+                    className={`px-1.5 py-0.5 rounded  font-black transition-all cursor-pointer ${
                       spaceLevel === 'sesak'
                         ? 'bg-[#004760] text-white shadow-[1px_1px_0px_#00354c]'
                         : 'bg-slate-100 text-[#004760] hover:bg-sky-50'
@@ -367,7 +367,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
                   <button
                     type="button"
                     onClick={() => handleSpaceChange('sedang')}
-                    className={`px-1.5 py-0.5 rounded uppercase font-black transition-all cursor-pointer ${
+                    className={`px-1.5 py-0.5 rounded  font-black transition-all cursor-pointer ${
                       spaceLevel === 'sedang'
                         ? 'bg-[#004760] text-white shadow-[1px_1px_0px_#00354c]'
                         : 'bg-slate-100 text-[#004760] hover:bg-sky-50'
@@ -378,13 +378,13 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
                   <button
                     type="button"
                     onClick={() => handleSpaceChange('lega')}
-                    className={`px-1.5 py-0.5 rounded uppercase font-black transition-all cursor-pointer ${
+                    className={`px-1.5 py-0.5 rounded  font-black transition-all cursor-pointer ${
                       spaceLevel === 'lega'
                         ? 'bg-[#004760] text-white shadow-[1px_1px_0px_#00354c]'
                         : 'bg-slate-100 text-[#004760] hover:bg-sky-50'
                     }`}
                   >
-                    Lega <InlineIcon name="Sparkles" />
+                    Lega
                   </button>
                 </div>
               </div>
@@ -409,7 +409,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
               <div id="ruang-kosong-arti-title-wrapper" className="w-full flex flex-col items-center shrink-0">
                 <h2
                   id="ruang-kosong-arti-title-text"
-                  className="font-serif font-black text-lg min-[360px]:text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-6xl text-[#004760] uppercase tracking-tight drop-shadow-sm leading-tight transition-all duration-200 flex flex-col items-center"
+                  className="font-serif font-black text-lg min-[360px]:text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-6xl text-[#004760]  tracking-tight drop-shadow-sm leading-tight transition-all duration-200 flex flex-col items-center"
                 >
                   {activePrinciple.name.includes('(') ? (
                     <>
@@ -486,7 +486,7 @@ export function RuangKosongArtiPage({ onBack, onHome }: RuangKosongArtiPageProps
                 } h-6 min-[360px]:h-7 sm:h-10 md:h-13 lg:h-16 xl:h-18 2xl:h-24`}
               >
                 {isSelected ? (
-                  <span className="font-serif font-black text-[9px] min-[360px]:text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg select-none tracking-wider uppercase truncate px-1 text-white">
+                  <span className="font-serif font-black text-[9px] min-[360px]:text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg select-none tracking-wider  truncate px-1 text-white">
                     {item.shortName}
                   </span>
                 ) : (

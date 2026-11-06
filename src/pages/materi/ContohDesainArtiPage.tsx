@@ -15,17 +15,17 @@ import poster6 from '../../assets/poster 6.jpg';
 const posterGuideSteps = [
   {
     target: 'contoh-desain-arti-poster-card',
-    title: 'Amati contoh desainnya',
+    title: "Amati Contoh Desainnya",
     description: 'Perhatikan warna, bentuk huruf, ruang kosong, dan susunan objek pada poster. Arahkan kursor ke poster setelah panduan selesai untuk melihatnya sedikit membesar.',
   },
   {
     target: 'contoh-desain-arti-desc-wrapper',
-    title: 'Hubungkan dengan prinsip desain',
+    title: "Hubungkan dengan Prinsip Desain",
     description: 'Baca penjelasan dan kata kunci di sini untuk memahami bagaimana warna, tipografi, ruang kosong, serta keseimbangan diterapkan. Cocokkan penjelasannya dengan bagian yang kamu lihat pada poster.',
   },
   {
     target: 'contoh-desain-selector-buttons',
-    title: 'Bandingkan keenam poster',
+    title: "Bandingkan Keenam Poster",
     description: 'Klik pilihan 2 sampai 6 untuk mengganti poster dan penjelasannya. Amati perbedaan penerapan prinsip desain pada setiap contoh. Klik Poster 1 untuk kembali ke contoh awal.',
   },
 ];
@@ -52,7 +52,7 @@ const posterCaseStudies: PosterCaseStudy[] = [
     id: 'poster-1',
     name: 'Poster 1: Harmoni Marun & Ruang Tenang',
     shortName: 'Poster 1',
-    badge: 'STUDI KASUS #1 · POSTER 1',
+    badge: "Studi Kasus #1 · Poster 1",
     image: poster1,
     title: 'Harmoni Marun & Ruang Tenang',
     description: 'Poster ini mengaplikasikan palet warna marun elegan yang berkelas dipadukan dengan tipografi sans-serif geometris yang bersih. Ruang makro di sisi atas memberikan kelegaan visual yang membuat mata audiens fokus ke objek utama secara instan.',
@@ -63,7 +63,7 @@ const posterCaseStudies: PosterCaseStudy[] = [
     id: 'poster-2',
     name: 'Poster 2: Kontras Berani & Tipografi Dinamis',
     shortName: 'Poster 2',
-    badge: 'STUDI KASUS #2 · POSTER 2',
+    badge: "Studi Kasus #2 · Poster 2",
     image: poster2,
     title: 'Kontras Berani & Tipografi Dinamis',
     description: 'Menggunakan warna kontras hangat komplementer untuk menciptakan urgensi dan daya tarik yang kuat. Ukuran font bervariasi secara terstruktur menciptakan hierarki informasi yang membimbing mata membaca dari judul ke detail acara.',
@@ -74,7 +74,7 @@ const posterCaseStudies: PosterCaseStudy[] = [
     id: 'poster-3',
     name: 'Poster 3: Elegansi Klasik & Serif Wibawa',
     shortName: 'Poster 3',
-    badge: 'STUDI KASUS #3 · POSTER 3',
+    badge: "Studi Kasus #3 · Poster 3",
     image: poster3,
     title: 'Elegansi Klasik & Serif Wibawa',
     description: 'Nuansa biru samudra dan langit dipadukan dengan tata letak simetris yang tertata apik. Memberikan kesan berwibawa, segar, dan profesional untuk menyampaikan pesan visual secara jernih.',
@@ -85,7 +85,7 @@ const posterCaseStudies: PosterCaseStudy[] = [
     id: 'poster-4',
     name: 'Poster 4: Keseimbangan Asimetris Modern',
     shortName: 'Poster 4',
-    badge: 'STUDI KASUS #4 · POSTER 4',
+    badge: "Studi Kasus #4 · Poster 4",
     image: poster4,
     title: 'Keseimbangan Asimetris Modern',
     description: 'Dominasi warna merah membara dipadukan dengan elemen visual asimetris yang dinamis namun tetap berbobot seimbang. Menghadirkan kesan modern, berenergi tinggi, dan memikat rasa ingin tahu pembaca.',
@@ -96,7 +96,7 @@ const posterCaseStudies: PosterCaseStudy[] = [
     id: 'poster-5',
     name: 'Poster 5: Irama Warna & Ruang Mikro Presisi',
     shortName: 'Poster 5',
-    badge: 'STUDI KASUS #5 · POSTER 5',
+    badge: "Studi Kasus #5 · Poster 5",
     image: poster5,
     title: 'Irama Warna & Ruang Mikro Presisi',
     description: 'Palet warna oranye jingga yang cerah dan hangat membangkitkan semangat. Spasi baris kalimat dan kerning huruf diatur dengan ruang mikro yang presisi sehingga pesan tetap nyaman dibaca.',
@@ -107,7 +107,7 @@ const posterCaseStudies: PosterCaseStudy[] = [
     id: 'poster-6',
     name: 'Poster 6: Sintesis Pilar Visual Terpadu',
     shortName: 'Poster 6',
-    badge: 'STUDI KASUS #6 · POSTER 6',
+    badge: "Studi Kasus #6 · Poster 6",
     image: poster6,
     title: 'Sintesis Pilar Visual Terpadu',
     description: 'Nuansa hijau daun segar yang memikat merangkai keempat pilar: warna yang hidup, tipografi yang tegas, ruang kosong yang lega, dan keseimbangan visual yang kokoh menjadi satu kesatuan karya desain utuh.',
@@ -249,14 +249,14 @@ export function ContohDesainArtiPage({ onBack, onHome }: ContohDesainArtiPagePro
               <div id="contoh-desain-arti-title-wrapper" className="w-full flex flex-col items-center shrink-0">
                 <span
                   id="contoh-desain-arti-badge"
-                  className="font-serif font-black text-[9px] sm:text-xs lg:text-sm text-[#004760] uppercase tracking-widest px-2.5 sm:px-3.5 py-0.5 sm:py-1 rounded-full border-1.5 sm:border-2 border-[#004760] bg-white shadow-[2px_2px_0px_#00354c] mb-1 sm:mb-1.5"
+                  className="font-serif font-black text-[9px] sm:text-xs lg:text-sm text-[#004760]  tracking-widest px-2.5 sm:px-3.5 py-0.5 sm:py-1 rounded-full border-1.5 sm:border-2 border-[#004760] bg-white shadow-[2px_2px_0px_#00354c] mb-1 sm:mb-1.5"
                 >
                   {activeCase.badge}
                 </span>
 
                 <h2
                   id="contoh-desain-arti-title-text"
-                  className="font-serif font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-[#004760] uppercase tracking-tight drop-shadow-sm leading-tight transition-all duration-200"
+                  className="font-serif font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl text-[#004760]  tracking-tight drop-shadow-sm leading-tight transition-all duration-200"
                 >
                   {activeCase.title}
                 </h2>
@@ -324,7 +324,7 @@ export function ContohDesainArtiPage({ onBack, onHome }: ContohDesainArtiPagePro
                 } h-6 min-[360px]:h-7 sm:h-10 md:h-13 lg:h-16 xl:h-18 2xl:h-24`}
               >
                 {isSelected ? (
-                  <span className="font-serif font-black text-[9px] min-[360px]:text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg select-none tracking-wider uppercase truncate px-1 text-white drop-shadow-[0_1.5px_2px_rgba(0,53,76,0.9)]">
+                  <span className="font-serif font-black text-[9px] min-[360px]:text-[10px] sm:text-xs md:text-sm lg:text-base 2xl:text-lg select-none tracking-wider  truncate px-1 text-white drop-shadow-[0_1.5px_2px_rgba(0,53,76,0.9)]">
                     {item.shortName}
                   </span>
                 ) : (
