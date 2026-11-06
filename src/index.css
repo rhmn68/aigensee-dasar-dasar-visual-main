@@ -836,3 +836,39 @@ button, input, select, textarea {
 }
 
 #app-music-toggle[data-inline="true"] { position: static; flex-shrink: 0; }
+
+/* Shared navigation sizing and colors across all learning modules. */
+[id$="-header"] { --module-button-height: 30px; }
+[id$="-header"] button,
+#module-music-control #app-music-toggle {
+  height: var(--module-button-height, 44px);
+  min-height: var(--module-button-height, 44px);
+  box-sizing: border-box;
+  border-width: 2px;
+  border-radius: 10px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+[id$="-header"] button {
+  background-color: white;
+  color: #004760;
+}
+[id$="-header"] button:hover { background-color: #f0f9ff; }
+#module-music-control #app-music-toggle {
+  width: var(--module-button-height, 44px);
+  padding: 0;
+  background-color: #00a1db;
+  color: white;
+}
+#module-music-control #app-music-toggle:hover { background-color: #0bb2ef; }
+@media (min-width: 640px) {
+  [id$="-header"] { --module-button-height: 36px; }
+}
+@media (min-width: 1024px) {
+  [id$="-header"] { --module-button-height: 44px; }
+  [id$="-header"] button,
+  #module-music-control #app-music-toggle { border-width: 3px; border-radius: 16px; }
+}
+@media (min-width: 1536px) {
+  [id$="-header"] { --module-button-height: 52px; }
+}

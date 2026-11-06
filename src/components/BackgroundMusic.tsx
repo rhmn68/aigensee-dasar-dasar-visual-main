@@ -1,7 +1,7 @@
 import { createPortal } from 'react-dom';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Music2, VolumeX } from 'lucide-react';
-import bgmUrl from '../assets/audio/study-calm.mp3';
+import bgmUrl from '../assets/audio/study-cheerful.mp3';
 import { isNarrationPlaying, subscribeToNarration } from '../utils/narration';
 
 export function BackgroundMusic({ view }: { view: string }) {
@@ -63,7 +63,7 @@ export function BackgroundMusic({ view }: { view: string }) {
         aria-pressed={playing}
         aria-label={playing ? 'Matikan musik latar' : 'Nyalakan musik latar'}
         title={playing ? 'Matikan musik latar' : 'Nyalakan musik latar'}
-        className={`z-40 flex items-center justify-center rounded-xl border-2 border-[#004760] p-2.5 shadow-[3px_3px_0_#00354c] transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-500 ${playing ? 'bg-[#00a1db] text-white hover:bg-sky-500' : 'bg-white text-[#004760] hover:bg-sky-50'}`}
+        className="pointer-events-auto z-40 flex items-center justify-center rounded-xl border-2 border-[#004760] bg-[#00a1db] text-white p-2.5 shadow-[3px_3px_0_#00354c] transition-colors hover:bg-sky-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-500"
       >
         {playing ? <Music2 size={20} aria-hidden="true" /> : <VolumeX size={20} aria-hidden="true" />}
       </button>
