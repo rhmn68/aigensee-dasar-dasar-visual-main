@@ -8,14 +8,14 @@ import { BackgroundFrame } from '../../components/BackgroundFrame';
 
 const macroGuideSteps = [
   {
-    target: 'ruang-kosong-arti-canvas-card',
-    title: "Amati Ruang di Sekeliling Kanvas",
-    description: 'Perhatikan jarak antara bingkai putus-putus dan kotak putih di dalamnya. Jarak ini adalah margin: ruang makro yang memberi elemen tempat untuk bernapas.',
-  },
-  {
     target: 'ruang-makro-simulation-controls',
     title: "Bandingkan Sesak, Sedang, dan Lega",
     description: 'Klik Sesak, Sedang, atau Lega untuk mengubah margin pada kanvas. Amati bagaimana ruang di tepi menyempit atau melebar, lalu bandingkan tampilan yang terasa paling nyaman.',
+  },
+  {
+    target: 'ruang-kosong-selector-buttons',
+    title: 'Klik untuk Menjelajahi Jenis Ruang Kosong',
+    description: 'Tombol Makro dan angka 2–5 di bawah bisa diklik. Pilih 2 untuk Mikro, 3 untuk Proksimitas, 4 untuk Fokus, atau 5 untuk Irama. Ilustrasi dan penjelasannya akan berubah sesuai pilihanmu. Klik Makro untuk kembali.',
   },
 ];
 

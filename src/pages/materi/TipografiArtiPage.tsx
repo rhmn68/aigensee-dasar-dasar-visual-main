@@ -7,26 +7,27 @@ import { BackgroundFrame } from '../../components/BackgroundFrame';
 
 const serifGuideSteps = [
   {
-    target: 'tipografi-arti-specimen-card',
-    title: "Kenali Huruf Serif",
-    description: 'Amati contoh huruf Aa pada kartu. Serif memiliki kait kecil di ujung guratan huruf. Gunakan kontrol di bagian bawah kartu untuk mencoba tampilannya.',
-  },
-  {
     target: 'tipografi-text-input',
     fallbackTarget: 'tipografi-arti-specimen-card',
     title: "Coba Teks Buatanmu",
-    description: 'Klik kolom “Ketik teks uji coba...” lalu tulis hingga 18 karakter. Contoh huruf pada kartu akan berubah mengikuti teks yang kamu ketik. Kolom ini tersedia pada layar tablet dan desktop.',
+    description: 'Klik kolom “Ketik teks uji coba...” lalu tulis hingga 18 karakter. Contoh huruf pada kartu akan berubah mengikuti teks yang kamu ketik.',
   },
   {
     target: 'tipografi-kerning-slider',
     fallbackTarget: 'tipografi-arti-specimen-card',
     title: "Atur Jarak Antarhuruf",
-    description: 'Geser pengaturan Kerning ke kiri atau kanan untuk merapatkan atau merenggangkan jarak antarhuruf. Amati perubahan pada contoh teks. Pengaturan ini tersedia pada layar tablet dan desktop.',
+    description: 'Geser pengaturan Kerning ke kiri atau kanan untuk merapatkan atau merenggangkan jarak antarhuruf. Amati perubahan pada contoh teks.',
   },
   {
-    target: 'tipografi-hierarchy-controls',
+    target: 'tipografi-hierarchy-buttons',
+    fallbackTarget: 'tipografi-hierarchy-buttons-mobile',
     title: "Coba Ukuran dan Hierarki",
     description: 'Klik H1, H2, H3, H4, atau P untuk mengubah ukuran contoh teks. Bandingkan tampilan judul besar dengan teks paragraf sebelum mulai bereksperimen.',
+  },
+  {
+    target: 'tipografi-selector-buttons',
+    title: 'Klik untuk Menjelajahi Jenis Huruf',
+    description: 'Tombol jenis huruf di bawah bisa diklik. Pilih G untuk Sans-Serif, Q untuk Display, M untuk Monospace, J untuk Script, atau K untuk Slab Serif. Contoh huruf dan penjelasannya akan berubah sesuai pilihanmu. Klik Serif untuk kembali.',
   },
 ];
 
@@ -302,7 +303,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                 {/* Mobile view: Tag Hierarchy Buttons */}
                 <div className="flex md:hidden items-center justify-between px-0.5 text-[8px] min-[360px]:text-[9px] text-slate-600 font-bold">
                   <span className="text-[#004760] text-[8px]">Tag:</span>
-                  <div className="flex items-center gap-1">
+                  <div id="tipografi-hierarchy-buttons-mobile" className="flex items-center gap-1">
                     {(['h1', 'h2', 'h3', 'h4', 'p'] as TypoTag[]).map((tag) => (
                       <button
                         key={tag.toUpperCase()}
@@ -365,7 +366,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                     />
 
                     {/* Desktop Hierarchy Tags */}
-                    <div className="flex items-center gap-1 ml-auto">
+                    <div id="tipografi-hierarchy-buttons" className="flex items-center gap-1 ml-auto">
                       {(['h1', 'h2', 'h3', 'h4', 'p'] as TypoTag[]).map((tag) => (
                         <button
                           key={tag.toUpperCase()}

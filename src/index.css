@@ -822,3 +822,14 @@ button, input, select, textarea {
   color: #005787;
   padding: 0.12em 0.1em;
 }
+
+#app-music-toggle {
+  top: clamp(12px, 2.5vh, 28px);
+  right: clamp(12px, 2vw, 32px);
+}
+[id$="-header-actions"] { margin-right: 56px; }
+@media (max-width: 640px) {
+  #app-music-toggle { padding: 6px; border-radius: 8px; }
+  #app-music-toggle svg { width: 16px; height: 16px; }
+  [id$="-header-actions"] { margin-right: 40px; }
+}

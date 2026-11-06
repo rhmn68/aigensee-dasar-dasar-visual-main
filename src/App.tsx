@@ -1,3 +1,4 @@
+import { BackgroundMusic } from './components/BackgroundMusic';
 import React, { useState, useEffect } from 'react';
 import { MateriId } from './types';
 import { useProgress } from './hooks/useProgress';
@@ -152,6 +153,7 @@ export default function App() {
       className="h-screen w-screen overflow-hidden bg-white antialiased text-slate-900 relative"
     >
       {/* Mobile Landscape Orientation Advisory */}
+      <BackgroundMusic />
       <PortraitWarning />
 
       {/* Screen Views */}

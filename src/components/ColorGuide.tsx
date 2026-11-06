@@ -3,11 +3,6 @@ import { ArrowLeft, ArrowRight, HelpCircle, X } from 'lucide-react';
 
 const colorSteps = [
   {
-    target: 'warna-arti-visual-card',
-    title: "Kartu Warna Interaktif",
-    description: 'Arahkan kursor ke kartu besar di kiri. Kartu akan bergerak dan berubah bentuk menjadi lingkaran. Coba amati animasinya setelah panduan selesai!',
-  },
-  {
     target: 'warna-12-buttons',
     title: "Pilih dan Jelajahi Warna",
     description: 'Klik salah satu pilihan warna di bawah. Kartu, judul, dan penjelasan akan berubah mengikuti warna yang kamu pilih. Mulai dari biru, lalu jelajahi warna lainnya!',
