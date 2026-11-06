@@ -4,7 +4,7 @@ import { Music2, VolumeX } from 'lucide-react';
 import bgmUrl from '../assets/audio/study-cheerful.mp3';
 import { isNarrationPlaying, subscribeToNarration } from '../utils/narration';
 
-const NORMAL_MUSIC_VOLUME = 0.20;
+const NORMAL_MUSIC_VOLUME = 1;
 const NARRATION_MUSIC_VOLUME = 0.01;
 
 export function BackgroundMusic({ view }: { view: string }) {
