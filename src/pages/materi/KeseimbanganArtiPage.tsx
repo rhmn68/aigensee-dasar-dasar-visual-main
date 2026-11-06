@@ -10,7 +10,7 @@ const balanceGuideSteps = [
   {
     target: 'keseimbangan-selector-buttons',
     title: "Jelajahi Jenis Keseimbangan",
-    description: 'Klik pilihan 2, 3, atau 4 di bawah untuk melihat keseimbangan Asimetris, Radial, dan Mosaik. Ilustrasi serta penjelasannya akan berubah. Bandingkan cara tiap jenis membagi bobot visual, lalu klik Simetris untuk kembali.',
+    description: 'Klik pilihan 2, 3, atau 4 di bawah untuk melihat keseimbangan Asimetris, Radial, dan Mosaik. Ilustrasi serta penjelasannya akan berubah.',
   },
 ];
 
