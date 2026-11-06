@@ -4,8 +4,8 @@ import { Music2, VolumeX } from 'lucide-react';
 import bgmUrl from '../assets/audio/study-cheerful.mp3';
 import { isNarrationPlaying, subscribeToNarration } from '../utils/narration';
 
-const NORMAL_MUSIC_VOLUME = 0.55;
-const NARRATION_MUSIC_VOLUME = 0.025;
+const NORMAL_MUSIC_VOLUME = 0.08;
+const NARRATION_MUSIC_VOLUME = 0.01;
 
 export function BackgroundMusic({ view }: { view: string }) {
   const [controlSlot, setControlSlot] = useState<HTMLElement | null>(null);
