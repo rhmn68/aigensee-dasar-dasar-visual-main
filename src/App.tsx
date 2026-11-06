@@ -153,7 +153,7 @@ export default function App() {
       className="h-screen w-screen overflow-hidden bg-white antialiased text-slate-900 relative"
     >
       {/* Mobile Landscape Orientation Advisory */}
-      <BackgroundMusic />
+      <BackgroundMusic view={currentView} />
       <PortraitWarning />
 
       {/* Screen Views */}

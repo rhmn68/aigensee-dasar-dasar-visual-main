@@ -1,8 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Music2, VolumeX } from 'lucide-react';
-import bgmUrl from '../assets/audio/bgm.mp3';
+import bgmUrl from '../assets/audio/study-calm.mp3';
+import { isNarrationPlaying, subscribeToNarration } from '../utils/narration';
 
-export function BackgroundMusic() {
+export function BackgroundMusic({ view }: { view: string }) {
+  const [controlSlot, setControlSlot] = useState<HTMLElement | null>(null);
+  useLayoutEffect(() => {
+    setControlSlot(view === 'splash' ? null : document.getElementById('module-music-control'));
+  }, [view]);
   const audioRef = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
   const [error, setError] = useState(false);
@@ -10,21 +16,25 @@ export function BackgroundMusic() {
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
-    audio.volume = 0.18;
-    // Keep narration clear while a lesson's audio is playing.
+    let frame = 0;
     const updateVolume = () => {
-      const narrationPlaying = Array.from(document.querySelectorAll('audio')).some(
-        (other) => other !== audio && !other.paused && !other.ended,
-      );
-      audio.volume = narrationPlaying ? 0.04 : 0.18;
+      cancelAnimationFrame(frame);
+      const startVolume = audio.volume;
+      const target = isNarrationPlaying() ? 0.025 : 0.18;
+      const duration = isNarrationPlaying() ? 250 : 900;
+      const start = performance.now();
+      const fade = (now: number) => {
+        const progress = Math.min(1, (now - start) / duration);
+        audio.volume = startVolume + (target - startVolume) * progress;
+        if (progress < 1) frame = requestAnimationFrame(fade);
+      };
+      frame = requestAnimationFrame(fade);
     };
-    document.addEventListener('play', updateVolume, true);
-    document.addEventListener('pause', updateVolume, true);
-    document.addEventListener('ended', updateVolume, true);
+    audio.volume = isNarrationPlaying() ? 0.025 : 0.18;
+    const unsubscribe = subscribeToNarration(updateVolume);
     return () => {
-      document.removeEventListener('play', updateVolume, true);
-      document.removeEventListener('pause', updateVolume, true);
-      document.removeEventListener('ended', updateVolume, true);
+      unsubscribe();
+      cancelAnimationFrame(frame);
       audio.pause();
     };
   }, []);
@@ -44,20 +54,25 @@ export function BackgroundMusic() {
     }
   };
 
-  return (
-    <>
-      <audio ref={audioRef} src={bgmUrl} loop preload="none" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => { setPlaying(false); setError(true); }} />
-      <button
+  const musicButton = (
+    <button
         id="app-music-toggle"
+        data-inline={controlSlot ? "true" : "false"}
         type="button"
         onClick={toggle}
         aria-pressed={playing}
         aria-label={playing ? 'Matikan musik latar' : 'Nyalakan musik latar'}
         title={playing ? 'Matikan musik latar' : 'Nyalakan musik latar'}
-        className={`fixed z-40 flex items-center justify-center rounded-xl border-2 border-[#004760] p-2.5 shadow-[3px_3px_0_#00354c] transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-500 ${playing ? 'bg-[#00a1db] text-white hover:bg-sky-500' : 'bg-white text-[#004760] hover:bg-sky-50'}`}
+        className={`z-40 flex items-center justify-center rounded-xl border-2 border-[#004760] p-2.5 shadow-[3px_3px_0_#00354c] transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-500 ${playing ? 'bg-[#00a1db] text-white hover:bg-sky-500' : 'bg-white text-[#004760] hover:bg-sky-50'}`}
       >
         {playing ? <Music2 size={20} aria-hidden="true" /> : <VolumeX size={20} aria-hidden="true" />}
       </button>
+  );
+
+  return (
+    <>
+      <audio ref={audioRef} src={bgmUrl} loop preload="none" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onError={() => { setPlaying(false); setError(true); }} />
+      {controlSlot ? createPortal(musicButton, controlSlot) : musicButton}
       {error && <p role="status" className="fixed right-4 top-20 z-40 rounded-lg border border-slate-200 bg-white px-3 py-2 text-xs text-[#004760] shadow">Musik belum dapat diputar. Klik tombol musik untuk mencoba lagi.</p>}
     </>
   );

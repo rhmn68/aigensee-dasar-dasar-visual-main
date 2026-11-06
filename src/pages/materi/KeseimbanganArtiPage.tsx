@@ -8,11 +8,6 @@ import { BackgroundFrame } from '../../components/BackgroundFrame';
 
 const balanceGuideSteps = [
   {
-    target: 'keseimbangan-arti-balance-card',
-    title: "Amati Bobot Visual di Kedua Sisi",
-    description: 'Perhatikan elemen di kiri dan kanan timbangan. Pada keseimbangan simetris, bentuk, ukuran, dan susunannya serupa seperti pantulan cermin sehingga kedua sisi terasa sama berat.',
-  },
-  {
     target: 'keseimbangan-selector-buttons',
     title: "Jelajahi Jenis Keseimbangan",
     description: 'Klik pilihan 2, 3, atau 4 di bawah untuk melihat keseimbangan Asimetris, Radial, dan Mosaik. Ilustrasi serta penjelasannya akan berubah. Bandingkan cara tiap jenis membagi bobot visual, lalu klik Simetris untuk kembali.',
@@ -129,7 +124,7 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
           id="keseimbangan-arti-header-actions"
           className="flex items-center gap-1.5 sm:gap-2.5 pointer-events-auto translate-y-1.5 sm:translate-y-2 md:translate-y-2.5 2xl:translate-y-3"
         >
-          {/* Tombol Beranda */}
+          <span id="module-music-control" className="flex items-center" />
           <button
             id="keseimbangan-arti-btn-home"
             type="button"
@@ -143,8 +138,6 @@ export function KeseimbanganArtiPage({ onBack, onHome }: KeseimbanganArtiPagePro
             <Home className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-4.5 lg:h-4.5 transition-transform group-hover:scale-110" />
             <span className="hidden sm:inline">Beranda</span>
           </button>
-
-          {/* Tombol Kembali ke Intro */}
           <button
             id="keseimbangan-arti-btn-back"
             type="button"

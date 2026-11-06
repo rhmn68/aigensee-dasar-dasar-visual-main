@@ -15,8 +15,8 @@ const serifGuideSteps = [
   {
     target: 'tipografi-kerning-slider',
     fallbackTarget: 'tipografi-arti-specimen-card',
-    title: "Atur Jarak Antarhuruf",
-    description: 'Geser pengaturan Kerning ke kiri atau kanan untuk merapatkan atau merenggangkan jarak antarhuruf. Amati perubahan pada contoh teks.',
+    title: "Atur Jarak Antar Huruf",
+    description: 'Geser pengaturan Kerning ke kiri atau kanan untuk merapatkan atau merenggangkan jarak antar huruf. Amati perubahan pada contoh teks.',
   },
   {
     target: 'tipografi-hierarchy-buttons',
@@ -192,7 +192,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
           id="tipografi-arti-header-actions"
           className="flex items-center gap-1.5 sm:gap-2.5 pointer-events-auto translate-y-1.5 sm:translate-y-2 md:translate-y-2.5 2xl:translate-y-3"
         >
-          {/* Tombol Beranda */}
+          <span id="module-music-control" className="flex items-center" />
           <button
             id="tipografi-arti-btn-home"
             type="button"
@@ -206,8 +206,6 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
             <Home className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-4.5 lg:h-4.5 transition-transform group-hover:scale-110" />
             <span className="hidden sm:inline">Beranda</span>
           </button>
-
-          {/* Tombol Kembali ke Intro */}
           <button
             id="tipografi-arti-btn-back"
             type="button"
@@ -355,7 +353,7 @@ export function TipografiArtiPage({ onBack, onHome }: TipografiArtiPageProps) {
                     </div>
                     <input
                       id="tipografi-kerning-slider"
-                      aria-label="Jarak antarhuruf"
+                      aria-label="Jarak antar huruf"
                       type="range"
                       min="-2"
                       max="10"

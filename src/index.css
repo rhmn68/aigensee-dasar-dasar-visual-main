@@ -824,12 +824,15 @@ button, input, select, textarea {
 }
 
 #app-music-toggle {
+  position: fixed;
   top: clamp(12px, 2.5vh, 28px);
   right: clamp(12px, 2vw, 32px);
 }
-[id$="-header-actions"] { margin-right: 56px; }
+
 @media (max-width: 640px) {
   #app-music-toggle { padding: 6px; border-radius: 8px; }
   #app-music-toggle svg { width: 16px; height: 16px; }
-  [id$="-header-actions"] { margin-right: 40px; }
+
 }
+
+#app-music-toggle[data-inline="true"] { position: static; flex-shrink: 0; }

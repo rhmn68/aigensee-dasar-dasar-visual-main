@@ -1,3 +1,4 @@
+import { trackNarration } from '../../utils/narration';
 import React, { useState, useEffect, useRef } from 'react';
 import { playClick, playSynthesizerNote } from '../../utils/audio';
 import { ArrowLeft, ArrowRight, Play, Pause, RotateCcw, Volume2 } from 'lucide-react';
@@ -47,6 +48,7 @@ export function WarnaIntroPage({ onBack, onCariTahu }: WarnaIntroPageProps) {
   // Inisialisasi dan putar audio narasi warna secara otomatis saat masuk halaman
   useEffect(() => {
     const audio = new Audio(warnaAudioUrl);
+    const stopTracking = trackNarration(audio);
     audioRef.current = audio;
     audio.preload = 'auto';
 
@@ -94,6 +96,7 @@ export function WarnaIntroPage({ onBack, onCariTahu }: WarnaIntroPageProps) {
 
     return () => {
       audio.pause();
+      stopTracking();
       audio.removeEventListener('timeupdate', handleTimeUpdate);
       audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
       audio.removeEventListener('ended', handleEnded);
@@ -182,7 +185,7 @@ export function WarnaIntroPage({ onBack, onCariTahu }: WarnaIntroPageProps) {
         </div>
 
         {/* Back to Splash button */}
-        <button
+        <div className="flex items-center gap-2"><span id="module-music-control" className="flex items-center" /><button
           id="warna-btn-back"
           type="button"
           onClick={handleBack}
@@ -190,7 +193,7 @@ export function WarnaIntroPage({ onBack, onCariTahu }: WarnaIntroPageProps) {
         >
           <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 transition-transform group-hover:-translate-x-1" />
           <span>Beranda</span>
-        </button>
+        </button></div>
       </header>
 
       {/* SPACER ATAS: Mempertahankan ruang vertikal agar konten tidak terdorong */}

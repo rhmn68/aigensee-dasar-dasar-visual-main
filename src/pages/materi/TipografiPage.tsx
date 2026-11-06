@@ -1,3 +1,4 @@
+import { trackNarration } from '../../utils/narration';
 import React, { useState, useEffect, useRef } from 'react';
 import { playClick, playSynthesizerNote } from '../../utils/audio';
 import { ArrowLeft, ArrowRight, Play, Pause, RotateCcw, Volume2 } from 'lucide-react';
@@ -20,6 +21,7 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
   // Inisialisasi dan putar audio narasi tipografi secara otomatis saat masuk halaman
   useEffect(() => {
     const audio = new Audio(tipografiAudioUrl);
+    const stopTracking = trackNarration(audio);
     audioRef.current = audio;
     audio.preload = 'auto';
 
@@ -67,6 +69,7 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
 
     return () => {
       audio.pause();
+      stopTracking();
       audio.removeEventListener('timeupdate', handleTimeUpdate);
       audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
       audio.removeEventListener('ended', handleEnded);
@@ -150,7 +153,7 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
           />
         </div>
 
-        <button
+        <div className="flex items-center gap-2"><span id="module-music-control" className="flex items-center" /><button
           id="tipografi-btn-back"
           type="button"
           onClick={handleBack}
@@ -158,7 +161,7 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
         >
           <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 transition-transform group-hover:-translate-x-1" />
           <span>Beranda</span>
-        </button>
+        </button></div>
       </header>
 
       {/* SPACER ATAS: Mempertahankan ruang vertikal agar konten tidak terdorong */}
@@ -242,7 +245,7 @@ export function TipografiPage({ onBack, onCariTahu }: TipografiPageProps) {
                   id="tipografi-description"
                   className="text-[9.5px] sm:text-[11px] md:text-xs lg:text-[13.5px] xl:text-sm 2xl:text-base text-[#00354c] leading-relaxed 2xl:leading-relaxed font-medium text-justify"
                 >
-                  Tipografi adalah cara memilih, mengatur, dan menggunakan huruf dalam sebuah desain agar informasi dapat dibaca dengan jelas, mudah dipahami, dan terlihat menarik. Jenis, ukuran, ketebalan, serta jarak antarhuruf dapat memengaruhi kesan yang muncul, seperti formal, modern, santai, tegas, atau elegan. Karena itu, penggunaan tipografi perlu disesuaikan dengan pesan, tujuan, dan karakter desain agar tulisan tidak hanya terlihat bagus, tetapi juga dapat menyampaikan informasi dengan efektif.
+                  Tipografi adalah cara memilih, mengatur, dan menggunakan huruf dalam sebuah desain agar informasi dapat dibaca dengan jelas, mudah dipahami, dan terlihat menarik. Jenis, ukuran, ketebalan, serta jarak antar huruf dapat memengaruhi kesan yang muncul, seperti formal, modern, santai, tegas, atau elegan. Karena itu, penggunaan tipografi perlu disesuaikan dengan pesan, tujuan, dan karakter desain agar tulisan tidak hanya terlihat bagus, tetapi juga dapat menyampaikan informasi dengan efektif.
                 </p>
               </div>
 

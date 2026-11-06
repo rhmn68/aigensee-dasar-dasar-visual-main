@@ -245,19 +245,7 @@ export function WarnaArtiPage({ onBack, onHome }: WarnaArtiPageProps) {
 
         {/* Buttons on top right: Roda Warna & Beranda (Digeser ke bawah di md & 2xl) */}
         <div id="warna-arti-header-actions" className="flex items-center gap-1 sm:gap-2 lg:gap-3 pointer-events-auto translate-y-1.5 sm:translate-y-2 md:translate-y-2.5 2xl:translate-y-3">
-          <button
-            id="warna-arti-btn-back"
-            type="button"
-            onClick={() => {
-              playClick();
-              onBack();
-            }}
-            className="group rounded-md sm:rounded-xl lg:rounded-2xl px-2 sm:px-3 lg:px-6 py-1 sm:py-1.5 lg:py-2.5 border-1.5 sm:border-2 lg:border-3 border-[#004760] bg-white hover:bg-sky-50 text-[#004760] shadow-[1.5px_1.5px_0px_#00354c] sm:shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] font-serif font-black text-[9px] sm:text-xs lg:text-sm 2xl:text-base flex items-center gap-1 sm:gap-1.5 lg:gap-2 transition-all cursor-pointer select-none"
-          >
-            <ArrowLeft className="w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-5 lg:h-5 transition-transform group-hover:-translate-x-1" />
-            <span>Roda Warna</span>
-          </button>
-
+          <span id="module-music-control" className="flex items-center" />
           <button
             id="warna-arti-btn-home"
             type="button"
@@ -269,6 +257,18 @@ export function WarnaArtiPage({ onBack, onHome }: WarnaArtiPageProps) {
           >
             <Home className="w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-5 lg:h-5" />
             <span>Beranda</span>
+          </button>
+          <button
+            id="warna-arti-btn-back"
+            type="button"
+            onClick={() => {
+              playClick();
+              onBack();
+            }}
+            className="group rounded-md sm:rounded-xl lg:rounded-2xl px-2 sm:px-3 lg:px-6 py-1 sm:py-1.5 lg:py-2.5 border-1.5 sm:border-2 lg:border-3 border-[#004760] bg-white hover:bg-sky-50 text-[#004760] shadow-[1.5px_1.5px_0px_#00354c] sm:shadow-[3px_3px_0px_#00354c] lg:shadow-[4px_4px_0px_#00354c] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#00354c] font-serif font-black text-[9px] sm:text-xs lg:text-sm 2xl:text-base flex items-center gap-1 sm:gap-1.5 lg:gap-2 transition-all cursor-pointer select-none"
+          >
+            <ArrowLeft className="w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-5 lg:h-5 transition-transform group-hover:-translate-x-1" />
+            <span>Roda Warna</span>
           </button>
         </div>
       </header>

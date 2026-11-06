@@ -46,7 +46,7 @@ export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) 
         </div>
 
         {/* Back to Splash button */}
-        <button
+        <div className="flex items-center gap-2"><span id="module-music-control" className="flex items-center" /><button
           id="contoh-desain-btn-back"
           type="button"
           onClick={() => {
@@ -57,7 +57,7 @@ export function ContohDesainPage({ onBack, onCariTahu }: ContohDesainPageProps) 
         >
           <ArrowLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 transition-transform group-hover:-translate-x-1" />
           <span>Beranda</span>
-        </button>
+        </button></div>
       </header>
 
       {/* SPACER ATAS */}

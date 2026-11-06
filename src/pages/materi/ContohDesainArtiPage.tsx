@@ -157,7 +157,7 @@ export function ContohDesainArtiPage({ onBack, onHome }: ContohDesainArtiPagePro
           id="contoh-desain-arti-header-actions"
           className="flex items-center gap-1.5 sm:gap-2.5 pointer-events-auto translate-y-1.5 sm:translate-y-2 md:translate-y-2.5 2xl:translate-y-3"
         >
-          {/* Tombol Beranda */}
+          <span id="module-music-control" className="flex items-center" />
           <button
             id="contoh-desain-arti-btn-home"
             type="button"
@@ -171,8 +171,6 @@ export function ContohDesainArtiPage({ onBack, onHome }: ContohDesainArtiPagePro
             <Home className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-4.5 lg:h-4.5 transition-transform group-hover:scale-110" />
             <span className="hidden sm:inline">Beranda</span>
           </button>
-
-          {/* Tombol Kembali ke Intro */}
           <button
             id="contoh-desain-arti-btn-back"
             type="button"
